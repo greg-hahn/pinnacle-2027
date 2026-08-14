@@ -1,0 +1,13 @@
+/* Must stay first: CSS drops any @import that follows another rule, which
+   silently kept Montserrat from ever loading. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&display=swap');
+@font-face{font-family:'Aviano Flare';src:url('../assets/fonts/AvianoFlare-Thin.woff2') format('woff2'),url('../assets/fonts/AvianoFlare-Thin.woff') format('woff');font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:'Aviano Flare';src:url('../assets/fonts/AvianoFlare-Light.woff2') format('woff2'),url('../assets/fonts/AvianoFlare-Light.woff') format('woff');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Aviano Flare';src:url('../assets/fonts/AvianoFlare.woff2') format('woff2'),url('../assets/fonts/AvianoFlare.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aviano Flare';src:url('../assets/fonts/AvianoFlare-Medium.woff2') format('woff2'),url('../assets/fonts/AvianoFlare-Medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Aviano Flare';src:url('../assets/fonts/AvianoFlare-Bold.woff2') format('woff2'),url('../assets/fonts/AvianoFlare-Bold.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aviano Flare';src:url('../assets/fonts/AvianoFlare-Black.woff2') format('woff2'),url('../assets/fonts/AvianoFlare-Black.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
+/* Annabelle (--font-script) dropped 2026-08-07: nothing in the microsite ever
+   referenced it. The .ttf moved to delete-me/design-system/assets/fonts/. To
+   restore, put the file back and re-add this line plus the token:
+   @font-face{font-family:'Annabelle';src:url('../assets/fonts/Annabelle.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap} */

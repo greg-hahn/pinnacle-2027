@@ -1,0 +1,5 @@
+node_modules/
+test_screenshots/
+.DS_Store
+*.log
+images/*.mp4
