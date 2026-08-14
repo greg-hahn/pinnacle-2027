@@ -47,8 +47,8 @@ server.listen(PORT, async () => {
   });
 
   const urls = [
-    { name: 'remote', url: 'https://greg-hahn.github.io/imperial-brady-design-system/ui_kits/microsite/index.html' },
     { name: 'local_root', url: `http://localhost:${PORT}/index.html` },
+    { name: 'local_fr', url: `http://localhost:${PORT}/fr/index.html` },
     { name: 'local_nested', url: `http://localhost:${PORT}/ui_kits/microsite/index.html` }
   ];
 

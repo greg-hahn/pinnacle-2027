@@ -1612,12 +1612,19 @@ Object.assign(__ds_scope, { Select });
 
 // ui_kits/microsite/AppShell.jsx
 try { (() => {
-// Header nav (items, scroll-spy, smooth scroll) held back at the client's
-// request (2026-08-07). Mirrors AppShell.jsx — the restorable original lives
-// in the comment block there, not here.
+const resolveAsset = (window.resolveAsset = window.resolveAsset || function(relPath) {
+  try {
+    const path = window.location.pathname;
+    if (path.includes('/ui_kits/microsite')) return '../../assets/' + relPath;
+    if (path.includes('/fr/') || path.endsWith('/fr')) return '../assets/' + relPath;
+  } catch (e) {}
+  return 'assets/' + relPath;
+});
 function AppShell({
-  children
+  children,
+  lang = "en"
 }) {
+  const isFr = lang === "fr" || lang === "fr-CA";
   return /*#__PURE__*/React.createElement("div", {
     style: {
       minHeight: 800,
@@ -1637,7 +1644,7 @@ function AppShell({
       zIndex: 20
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/imperial-brady-logo.jpg",
+    src: resolveAsset("imperial-brady-logo.jpg"),
     alt: "Imperial Brady Canada",
     style: {
       height: 40
@@ -1648,16 +1655,32 @@ function AppShell({
       alignItems: 'center',
       gap: 16
     }
-  }, /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 11,
+      fontSize: 12,
       letterSpacing: '0.1em',
-      color: 'var(--text-muted)',
-      cursor: 'pointer'
+      color: 'var(--text-muted)'
     }
-  }, "EN / FR"))), children, /*#__PURE__*/React.createElement(ContactSection, null), /*#__PURE__*/React.createElement(Footer, null));
+  }, /*#__PURE__*/React.createElement("a", {
+    href: isFr ? "../" : "./",
+    style: {
+      fontWeight: !isFr ? 700 : 400,
+      color: !isFr ? 'var(--text-primary)' : 'var(--text-muted)',
+      textDecoration: 'none',
+      marginRight: 4
+    }
+  }, "EN"), " / ", /*#__PURE__*/React.createElement("a", {
+    href: isFr ? "./" : "fr/",
+    style: {
+      fontWeight: isFr ? 700 : 400,
+      color: isFr ? 'var(--text-primary)' : 'var(--text-muted)',
+      textDecoration: 'none',
+      marginLeft: 4
+    }
+  }, "FR")))), children, /*#__PURE__*/React.createElement(ContactSection, { lang: lang }), /*#__PURE__*/React.createElement(Footer, { lang: lang }));
 }
-function ContactSection() {
+function ContactSection({ lang }) {
+  const isFr = lang === "fr" || lang === "fr-CA";
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: 'var(--surface-card)',
@@ -1678,14 +1701,14 @@ function ContactSection() {
       color: 'var(--text-primary)',
       margin: '0 0 14px'
     }
-  }, "Have a Question?"), /*#__PURE__*/React.createElement("p", {
+  }, isFr ? "Vous avez des questions ?" : "Have a Question?"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 16,
       lineHeight: 1.75,
       color: 'var(--text-secondary)',
       margin: '0 0 40px'
     }
-  }, "We\u2019re here to help with anything related to the 2027 Pinnacle Convention."), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "Nous sommes là pour vous aider avec tout ce qui concerne la convention Pinnacle 2027." : "We\u2019re here to help with anything related to the 2027 Pinnacle Convention."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -1694,7 +1717,7 @@ function ContactSection() {
       flexWrap: 'wrap'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/danielle-guistini-headshot.jpg",
+    src: resolveAsset("danielle-guistini-headshot.jpg"),
     alt: "Danielle Guistini",
     style: {
       width: 104,
@@ -1723,7 +1746,7 @@ function ContactSection() {
       color: 'var(--text-muted)',
       marginBottom: 10
     }
-  }, "Project Manager / Chef de projet"), /*#__PURE__*/React.createElement("a", {
+  }, isFr ? "Chef de projet" : "Project Manager / Chef de projet"), /*#__PURE__*/React.createElement("a", {
     href: "mailto:danielle@adiventus.com",
     style: {
       fontSize: 15,
@@ -1733,7 +1756,8 @@ function ContactSection() {
     }
   }, "danielle@adiventus.com")))));
 }
-function Footer() {
+function Footer({ lang }) {
+  const isFr = lang === "fr" || lang === "fr-CA";
   return /*#__PURE__*/React.createElement("footer", {
     style: {
       background: 'var(--color-navy)',
@@ -1750,7 +1774,7 @@ function Footer() {
       padding: '10px 18px'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/imperial-brady-logo-white.png",
+    src: resolveAsset("imperial-brady-logo-white.png"),
     alt: "Imperial Brady Canada",
     style: {
       height: 72
@@ -1761,7 +1785,7 @@ function Footer() {
       padding: '10px 18px'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/pinnacle-logo-white.png",
+    src: resolveAsset("pinnacle-logo-white.png"),
     alt: "Pinnacle",
     style: {
       height: 34
@@ -1773,7 +1797,7 @@ function Footer() {
       color: 'var(--text-inverse-muted)',
       textTransform: 'uppercase'
     }
-  }, "Built by ", /*#__PURE__*/React.createElement("a", {
+  }, isFr ? "Con\xE7u par " : "Built by ", /*#__PURE__*/React.createElement("a", {
     href: "https://www.adiventus.com/",
     style: {
       color: '#fff'
@@ -1893,7 +1917,8 @@ const PRESIDENT_MESSAGE_TYPE = {
   lineHeight: 1.6,
   color: 'var(--text-primary)'
 };
-function HomeScreen() {
+function HomeScreen({ lang = "en" }) {
+  const isFr = lang === "fr" || lang === "fr-CA";
   const {
     Badge
   } = window.ImperialBradyDesignSystem_1c8702;
@@ -1905,10 +1930,10 @@ function HomeScreen() {
       height: 560
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/photos/pinnacle-hero-banner-1280.webp",
-    srcSet: "../../assets/photos/pinnacle-hero-banner-640.webp 640w, ../../assets/photos/pinnacle-hero-banner-960.webp 960w, ../../assets/photos/pinnacle-hero-banner-1280.webp 1280w, ../../assets/photos/pinnacle-hero-banner-1920.webp 1920w",
+    src: resolveAsset("photos/pinnacle-hero-banner-1280.webp"),
+    srcSet: `${resolveAsset("photos/pinnacle-hero-banner-640.webp")} 640w, ${resolveAsset("photos/pinnacle-hero-banner-960.webp")} 960w, ${resolveAsset("photos/pinnacle-hero-banner-1280.webp")} 1280w, ${resolveAsset("photos/pinnacle-hero-banner-1920.webp")} 1920w`,
     sizes: "100vw",
-    alt: "The Windstar Star Pride passing beneath a raised Tower Bridge on the Thames at dusk",
+    alt: isFr ? "Le Windstar Star Pride passant sous le Tower Bridge sur la Thames au cr\xE9puscule" : "The Windstar Star Pride passing beneath a raised Tower Bridge on the Thames at dusk",
     fetchpriority: "high",
     decoding: "async",
     style: {
@@ -1935,7 +1960,7 @@ function HomeScreen() {
     }
   }, /*#__PURE__*/React.createElement(Badge, {
     tone: "primary"
-  }, "Save the Date"), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "R\xE9servez la date" : "Save the Date"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 700,
@@ -1944,14 +1969,14 @@ function HomeScreen() {
       margin: '18px 0 14px',
       maxWidth: 720
     }
-  }, "history, beautifully unfolded."), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "l'histoire se d\xE9voile en beaut\xE9." : "history, beautifully unfolded."), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 15,
       letterSpacing: '0.08em',
       textTransform: 'uppercase',
       opacity: 0.9
     }
-  }, "London & Belgium \u2014 May 6\u201310, 2027"))), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "Londres & Belgique \u2014 6 au 10 mai 2027" : "London & Belgium \u2014 May 6\u201310, 2027"))), /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--color-navy)',
       padding: '64px 48px 72px',
@@ -1974,7 +1999,7 @@ function HomeScreen() {
       opacity: 0.75,
       marginBottom: 14
     }
-  }, "A First Look"), /*#__PURE__*/React.createElement("h3", {
+  }, isFr ? "Un Premier Aper\xE7u" : "A First Look"), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 700,
@@ -1987,15 +2012,15 @@ function HomeScreen() {
     style: {
       display: 'block'
     }
-  }, "Set Sail from London, England"), /*#__PURE__*/React.createElement("span", {
+  }, isFr ? "Mettez le cap depuis Londres, Angleterre" : "Set Sail from London, England"), /*#__PURE__*/React.createElement("span", {
     style: {
       display: 'block'
     }
-  }, "on the Windstar Star Pride")), /*#__PURE__*/React.createElement("video", {
+  }, isFr ? "\xE0 bord du Windstar Star Pride" : "on the Windstar Star Pride")), /*#__PURE__*/React.createElement("video", {
     controls: true,
     playsInline: true,
     preload: "metadata",
-    poster: "../../assets/photos/star-pride.webp",
+    poster: resolveAsset("photos/star-pride.webp"),
     style: {
       display: 'block',
       width: '100%',
@@ -2005,7 +2030,7 @@ function HomeScreen() {
       border: '1px solid rgba(255,255,255,0.14)'
     }
   }, /*#__PURE__*/React.createElement("source", {
-    src: "../../assets/video/pinnacle-2027-teaser.mp4",
+    src: resolveAsset("video/pinnacle-2027-teaser.mp4"),
     type: "video/mp4"
   }))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2023,17 +2048,17 @@ function HomeScreen() {
       fontWeight: 700,
       marginBottom: 16
     }
-  }, "The Journey to Pinnacle 2027"), /*#__PURE__*/React.createElement("h1", {
+  }, isFr ? "Le Parcours vers Pinnacle 2027" : "The Journey to Pinnacle 2027"), /*#__PURE__*/React.createElement("h1", {
     style: {
       ...PRESIDENT_MESSAGE_TYPE,
       margin: '0 0 20px'
     }
-  }, "Our Pinnacle sales competition is a great opportunity to prove your skills, determination and drive."), /*#__PURE__*/React.createElement("p", {
+  }, isFr ? "Notre concours de ventes Pinnacle est une occasion id\xE9ale de d\xE9montrer vos comp\xE9tences, votre d\xE9termination et votre passion." : "Our Pinnacle sales competition is a great opportunity to prove your skills, determination and drive."), /*#__PURE__*/React.createElement("p", {
     style: {
       ...PRESIDENT_MESSAGE_TYPE,
       margin: 0
     }
-  }, "At the end, there's a well-earned reward: an unforgettable journey from London to Bruges and Antwerp, sailing beneath Tower Bridge aboard a luxury yacht. Pinnacle is about challenging yourself, hitting new targets, and recognizing what you've achieved.")), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "\xC0 la cl\xE9, une r\xE9compense bien m\xE9rit\xE9e : un voyage inoubliable de Londres \xE0 Bruges et Anvers, en passant sous le Tower Bridge \xE0 bord d\u2019un yacht de luxe. Pinnacle, c\u2019est se d\xE9passer, atteindre de nouveaux objectifs et c\xE9l\xE9brer vos r\xE9ussites." : "At the end, there's a well-earned reward: an unforgettable journey from London to Bruges and Antwerp, sailing beneath Tower Bridge aboard a luxury yacht. Pinnacle is about challenging yourself, hitting new targets, and recognizing what you've achieved.")), /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--surface-sunken)',
       padding: '72px 24px'
@@ -2049,9 +2074,9 @@ function HomeScreen() {
       ...PRESIDENT_MESSAGE_TYPE,
       margin: '0 0 28px'
     }
-  }, "\"We're proud of the culture we've built: one that values hard work, teamwork, and shared success. I'm excited to see who will earn their spot on this incredible experience.\""), /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/stephane-signature.png",
-    alt: "Signature of St\xE9phane Lapointe",
+  }, isFr ? "\xAB Nous sommes fiers de la culture que nous avons b\xE2tie : une culture qui valorise le travail acharn\xE9, l\u2019esprit d\u2019\xE9quipe et le succ\xE8s partag\xE9. J\u2019ai h\xE2te de voir qui m\xE9ritera sa place pour cette exp\xE9rience incroyable. \xBB" : "\"We're proud of the culture we've built: one that values hard work, teamwork, and shared success. I'm excited to see who will earn their spot on this incredible experience.\""), /*#__PURE__*/React.createElement("img", {
+    src: resolveAsset("stephane-signature.png"),
+    alt: "Signature de St\xE9phane Lapointe",
     style: {
       height: 56,
       marginBottom: 6
@@ -2061,7 +2086,7 @@ function HomeScreen() {
       fontSize: 13,
       color: 'var(--text-secondary)'
     }
-  }, /*#__PURE__*/React.createElement("strong", null, "St\xE9phane Lapointe"), " \xB7 President, Imperial Brady Canada"))));
+  }, /*#__PURE__*/React.createElement("strong", null, "St\xE9phane Lapointe"), isFr ? " \xB7 Pr\xE9sident, Imperial Brady Canada" : " \xB7 President, Imperial Brady Canada"))));
 }
 Object.assign(__ds_scope, { HomeScreen });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/microsite/HomeScreen.jsx", error: String((e && e.message) || e) }); }
