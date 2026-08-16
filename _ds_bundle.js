@@ -1701,14 +1701,14 @@ function ContactSection({ lang }) {
       color: 'var(--text-primary)',
       margin: '0 0 14px'
     }
-  }, isFr ? "Vous avez des questions ?" : "Have a Question?"), /*#__PURE__*/React.createElement("p", {
+  }, isFr ? "Vous avez une question?" : "Have a Question?"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 16,
       lineHeight: 1.75,
       color: 'var(--text-secondary)',
       margin: '0 0 40px'
     }
-  }, isFr ? "Nous sommes là pour vous aider avec tout ce qui concerne la convention Pinnacle 2027." : "We\u2019re here to help with anything related to the 2027 Pinnacle Convention."), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "Nous sommes là pour répondre à toutes vos questions concernant le congrès Pinnacle 2027." : "We\u2019re here to help with anything related to the 2027 Pinnacle Convention."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -1960,7 +1960,7 @@ function HomeScreen({ lang = "en" }) {
     }
   }, /*#__PURE__*/React.createElement(Badge, {
     tone: "primary"
-  }, isFr ? "R\xE9servez la date" : "Save the Date"), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "À noter à votre agenda" : "Save the Date"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 700,
@@ -1969,14 +1969,14 @@ function HomeScreen({ lang = "en" }) {
       margin: '18px 0 14px',
       maxWidth: 720
     }
-  }, isFr ? "l'histoire se d\xE9voile en beaut\xE9." : "history, beautifully unfolded."), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "L’histoire, magnifiquement racontée." : "history, beautifully unfolded."), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 15,
       letterSpacing: '0.08em',
       textTransform: 'uppercase',
       opacity: 0.9
     }
-  }, isFr ? "Londres & Belgique \u2014 6 au 10 mai 2027" : "London & Belgium \u2014 May 6\u201310, 2027"))), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "Londres et la Belgique \u2014 du 6 au 10 mai 2027" : "London & Belgium \u2014 May 6\u201310, 2027"))), /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--color-navy)',
       padding: '64px 48px 72px',
@@ -1999,7 +1999,7 @@ function HomeScreen({ lang = "en" }) {
       opacity: 0.75,
       marginBottom: 14
     }
-  }, isFr ? "Un Premier Aper\xE7u" : "A First Look"), /*#__PURE__*/React.createElement("h3", {
+  }, isFr ? "Un premier aperçu" : "A First Look"), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 700,
@@ -2012,11 +2012,11 @@ function HomeScreen({ lang = "en" }) {
     style: {
       display: 'block'
     }
-  }, isFr ? "Mettez le cap depuis Londres, Angleterre" : "Set Sail from London, England"), /*#__PURE__*/React.createElement("span", {
+  }, isFr ? "Mettez les voiles au départ de Londres, en Angleterre," : "Set Sail from London, England"), /*#__PURE__*/React.createElement("span", {
     style: {
       display: 'block'
     }
-  }, isFr ? "\xE0 bord du Windstar Star Pride" : "on the Windstar Star Pride")), /*#__PURE__*/React.createElement("video", {
+  }, isFr ? "à bord du Windstar Star Pride" : "on the Windstar Star Pride")), /*#__PURE__*/React.createElement("video", {
     controls: true,
     playsInline: true,
     preload: "metadata",
@@ -2048,17 +2048,17 @@ function HomeScreen({ lang = "en" }) {
       fontWeight: 700,
       marginBottom: 16
     }
-  }, isFr ? "Le Parcours vers Pinnacle 2027" : "The Journey to Pinnacle 2027"), /*#__PURE__*/React.createElement("h1", {
+  }, isFr ? "Le voyage vers Pinnacle 2027" : "The Journey to Pinnacle 2027"), /*#__PURE__*/React.createElement("h1", {
     style: {
       ...PRESIDENT_MESSAGE_TYPE,
       margin: '0 0 20px'
     }
-  }, isFr ? "Notre concours de ventes Pinnacle est une occasion id\xE9ale de d\xE9montrer vos comp\xE9tences, votre d\xE9termination et votre passion." : "Our Pinnacle sales competition is a great opportunity to prove your skills, determination and drive."), /*#__PURE__*/React.createElement("p", {
+  }, isFr ? "La compétition des ventes Pinnacle est votre chance de mettre en valeur votre talent, votre détermination et votre ambition." : "Our Pinnacle sales competition is a great opportunity to prove your skills, determination and drive."), /*#__PURE__*/React.createElement("p", {
     style: {
       ...PRESIDENT_MESSAGE_TYPE,
       margin: 0
     }
-  }, isFr ? "\xC0 la cl\xE9, une r\xE9compense bien m\xE9rit\xE9e : un voyage inoubliable de Londres \xE0 Bruges et Anvers, en passant sous le Tower Bridge \xE0 bord d\u2019un yacht de luxe. Pinnacle, c\u2019est se d\xE9passer, atteindre de nouveaux objectifs et c\xE9l\xE9brer vos r\xE9ussites." : "At the end, there's a well-earned reward: an unforgettable journey from London to Bruges and Antwerp, sailing beneath Tower Bridge aboard a luxury yacht. Pinnacle is about challenging yourself, hitting new targets, and recognizing what you've achieved.")), /*#__PURE__*/React.createElement("div", {
+  }, isFr ? "À la ligne d’arrivée, il y a une récompense bien méritée: Un voyage inoubliable de Londres à Bruges et Anvers, avec un passage sous le Tower Bridge à bord d’un yacht de luxe. Pinnacle a pour objet le fait de repousser vos limites, d’atteindre de nouveaux objectifs et de reconnaître des réalisations exceptionnelles." : "At the end, there's a well-earned reward: an unforgettable journey from London to Bruges and Antwerp, sailing beneath Tower Bridge aboard a luxury yacht. Pinnacle is about challenging yourself, hitting new targets, and recognizing what you've achieved.")), /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--surface-sunken)',
       padding: '72px 24px'
@@ -2074,9 +2074,9 @@ function HomeScreen({ lang = "en" }) {
       ...PRESIDENT_MESSAGE_TYPE,
       margin: '0 0 28px'
     }
-  }, isFr ? "\xAB Nous sommes fiers de la culture que nous avons b\xE2tie : une culture qui valorise le travail acharn\xE9, l\u2019esprit d\u2019\xE9quipe et le succ\xE8s partag\xE9. J\u2019ai h\xE2te de voir qui m\xE9ritera sa place pour cette exp\xE9rience incroyable. \xBB" : "\"We're proud of the culture we've built: one that values hard work, teamwork, and shared success. I'm excited to see who will earn their spot on this incredible experience.\""), /*#__PURE__*/React.createElement("img", {
+  }, isFr ? "Nous sommes fiers de la culture que nous avons créée : une culture qui valorise le travail acharné, le travail d’équipe et le succès partagé. Je suis impatient de voir ce que nous pouvons accomplir ensemble et qui gagnera sa place dans cette expérience incroyable." : "\"We're proud of the culture we've built: one that values hard work, teamwork, and shared success. I'm excited to see who will earn their spot on this incredible experience.\""), /*#__PURE__*/React.createElement("img", {
     src: resolveAsset("stephane-signature.png"),
-    alt: "Signature de St\xE9phane Lapointe",
+    alt: "Signature de Stéphane Lapointe",
     style: {
       height: 56,
       marginBottom: 6
@@ -2086,7 +2086,7 @@ function HomeScreen({ lang = "en" }) {
       fontSize: 13,
       color: 'var(--text-secondary)'
     }
-  }, /*#__PURE__*/React.createElement("strong", null, "St\xE9phane Lapointe"), isFr ? " \xB7 Pr\xE9sident, Imperial Brady Canada" : " \xB7 President, Imperial Brady Canada"))));
+  }, /*#__PURE__*/React.createElement("strong", null, "Stéphane Lapointe"), isFr ? " · Président, Imperial Dade Canada" : " · President, Imperial Brady Canada"))));
 }
 Object.assign(__ds_scope, { HomeScreen });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/microsite/HomeScreen.jsx", error: String((e && e.message) || e) }); }
