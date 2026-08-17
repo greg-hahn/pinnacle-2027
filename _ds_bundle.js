@@ -2086,7 +2086,7 @@ function HomeScreen({ lang = "en" }) {
       fontSize: 13,
       color: 'var(--text-secondary)'
     }
-  }, /*#__PURE__*/React.createElement("strong", null, "Stéphane Lapointe"), isFr ? " · Président, Imperial Dade Canada" : " · President, Imperial Brady Canada"))));
+  }, /*#__PURE__*/React.createElement("strong", null, "Stéphane Lapointe"), isFr ? " · Président, Imperial Brady Canada" : " · President, Imperial Brady Canada"))));
 }
 Object.assign(__ds_scope, { HomeScreen });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/microsite/HomeScreen.jsx", error: String((e && e.message) || e) }); }
