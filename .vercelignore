@@ -1,0 +1,4 @@
+images/*.mp4
+node_modules/
+test_screenshots/
+.git/
