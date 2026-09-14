@@ -2014,13 +2014,13 @@ const ITINERARY_DAYS = [{
     altEn: 'The London Eye, Westminster and the River Thames in morning light',
     altFr: 'Le London Eye, Westminster et la Tamise dans la lumière du matin'
   }, {
-    src: 'photos/itinerary-london-day5-eye.webp',
-    altEn: 'The London Eye above the Thames beneath a clear blue sky',
-    altFr: 'Le London Eye au-dessus de la Tamise sous un ciel bleu'
+    src: 'photos/itinerary-london-arrival.webp',
+    altEn: 'The Mall in London lined with Union Jack flags and leading toward Buckingham Palace',
+    altFr: 'The Mall à Londres, bordée de drapeaux britanniques et menant au palais de Buckingham'
   }, {
-    src: 'photos/itinerary-london-day5-lamps.webp',
-    altEn: 'The London Eye and ornate riverside lamps beside the Thames',
-    altFr: 'Le London Eye et des lampadaires ornés au bord de la Tamise'
+    src: 'photos/itinerary-london-day1-tower.webp',
+    altEn: 'The Tower of London illuminated beside the Thames at dusk',
+    altFr: 'La tour de Londres illuminée au bord de la Tamise au crépuscule'
   }]
 }];
 function ItinerarySection({
