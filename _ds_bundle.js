@@ -1917,6 +1917,109 @@ const PRESIDENT_MESSAGE_TYPE = {
   lineHeight: 1.6,
   color: 'var(--text-primary)'
 };
+const ITINERARY_DAYS = [{
+  iso: '2027-05-06',
+  dateEn: 'Thursday, May 6, 2027',
+  dateFr: 'Jeudi 6 mai 2027',
+  placeEn: 'London, England',
+  placeFr: 'Londres, Angleterre',
+  titleEn: 'The London Experience',
+  titleFr: 'L’expérience londonienne',
+  descEn: 'Arrive in London and settle into the InterContinental London Park Lane before exploring the vibrant city.',
+  descFr: 'Arrivée à Londres et installation à l’InterContinental London Park Lane, avant de partir à la découverte de cette ville vibrante.',
+  src: 'photos/itinerary-london-arrival.webp',
+  altEn: 'The Mall in London lined with Union Jack flags and leading toward Buckingham Palace',
+  altFr: 'The Mall à Londres, bordée de drapeaux britanniques et menant au palais de Buckingham'
+}, {
+  iso: '2027-05-07',
+  dateEn: 'Friday, May 7, 2027',
+  dateFr: 'Vendredi 7 mai 2027',
+  placeEn: 'London & Embarkation',
+  placeFr: 'Londres et embarquement',
+  titleEn: 'Windstar Star Pride',
+  titleFr: 'Windstar Star Pride',
+  descEn: 'Enjoy the morning in London before boarding at HMS Belfast and sailing along the Thames beneath iconic Tower Bridge.',
+  descFr: 'Profitez de la matinée à Londres avant d’embarquer au HMS Belfast et de naviguer sur la Tamise sous l’emblématique Tower Bridge.',
+  src: 'photos/itinerary-london-embarkation.webp',
+  altEn: 'Tower Bridge illuminated at dusk over the River Thames',
+  altFr: 'Le Tower Bridge illuminé au crépuscule au-dessus de la Tamise'
+}, {
+  iso: '2027-05-08',
+  dateEn: 'Saturday, May 8, 2027',
+  dateFr: 'Samedi 8 mai 2027',
+  placeEn: 'Antwerp, Belgium',
+  placeFr: 'Anvers, Belgique',
+  titleEn: 'Culture, Style & Celebration',
+  titleFr: 'Culture, style et célébration',
+  descEn: 'Discover Antwerp’s historic centre, Grote Markt and Scheldt riverfront, where architecture, art, fashion and the diamond trade meet.',
+  descFr: 'Découvrez le centre historique d’Anvers, la Grote Markt et les rives de l’Escaut, où se rencontrent architecture, art, mode et tradition diamantaire.',
+  src: 'photos/itinerary-antwerp.webp',
+  altEn: 'Antwerp’s Grote Markt with the Brabo Fountain, guild houses and cathedral tower',
+  altFr: 'La Grote Markt d’Anvers avec la fontaine de Brabo, les maisons des corporations et la tour de la cathédrale'
+}, {
+  iso: '2027-05-09',
+  dateEn: 'Sunday, May 9, 2027',
+  dateFr: 'Dimanche 9 mai 2027',
+  placeEn: 'Bruges, Belgium',
+  placeFr: 'Bruges, Belgique',
+  titleEn: 'Medieval Belgium',
+  titleFr: 'La Belgique médiévale',
+  descEn: 'Explore Bruges’ UNESCO-listed historic centre, with its winding canals, cobblestone streets, Gothic architecture and picturesque squares.',
+  descFr: 'Explorez le centre historique de Bruges, inscrit au patrimoine mondial de l’UNESCO, avec ses canaux, ses rues pavées, son architecture gothique et ses places pittoresques.',
+  src: 'photos/itinerary-bruges.webp',
+  altEn: 'A quiet Bruges canal framed by a sequence of historic brick bridges',
+  altFr: 'Un paisible canal de Bruges encadré par une série de ponts historiques en brique'
+}, {
+  iso: '2027-05-10',
+  dateEn: 'Monday, May 10, 2027',
+  dateFr: 'Lundi 10 mai 2027',
+  placeEn: 'London, England',
+  placeFr: 'Londres, Angleterre',
+  titleEn: 'Return Home',
+  titleFr: 'Retour à Londres',
+  descEn: 'Sail back into London for an early morning arrival at HMS Belfast, bringing the Pinnacle journey full circle.',
+  descFr: 'Revenez à Londres pour une arrivée tôt le matin au HMS Belfast, bouclant ainsi le voyage Pinnacle.',
+  src: 'photos/itinerary-london-return.webp',
+  altEn: 'The London Eye, Westminster and the River Thames in morning light',
+  altFr: 'Le London Eye, Westminster et la Tamise dans la lumière du matin'
+}];
+function ItinerarySection({
+  isFr
+}) {
+  return /*#__PURE__*/React.createElement("section", {
+    id: "itinerary",
+    className: "itinerary-section",
+    "aria-labelledby": "itinerary-title"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-heading"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-eyebrow"
+  }, isFr ? "Le voyage Pinnacle" : "The Pinnacle Journey"), /*#__PURE__*/React.createElement("h2", {
+    id: "itinerary-title"
+  }, isFr ? "Cinq jours, trois destinations inoubliables." : "Five days, three unforgettable destinations."), /*#__PURE__*/React.createElement("p", null, isFr ? "Un premier aperçu du voyage qui vous attend à Londres, à Anvers et à Bruges." : "A first look at the experiences waiting in London, Antwerp and Bruges.")), /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-grid"
+  }, ITINERARY_DAYS.map((day, index) => /*#__PURE__*/React.createElement("article", {
+    className: "itinerary-card",
+    key: day.iso
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-card-media"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: resolveAsset(day.src),
+    alt: isFr ? day.altFr : day.altEn,
+    loading: "lazy",
+    decoding: "async"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-card-copy"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-date"
+  }, /*#__PURE__*/React.createElement("span", null, isFr ? `Jour ${index + 1}` : `Day ${index + 1}`), /*#__PURE__*/React.createElement("time", {
+    dateTime: day.iso
+  }, isFr ? day.dateFr : day.dateEn)), /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-place"
+  }, isFr ? day.placeFr : day.placeEn), /*#__PURE__*/React.createElement("h3", null, isFr ? day.titleFr : day.titleEn), /*#__PURE__*/React.createElement("p", null, isFr ? day.descFr : day.descEn)))))));
+}
 function HomeScreen({ lang = "en" }) {
   const isFr = lang === "fr" || lang === "fr-CA";
   const {
@@ -1961,6 +2064,7 @@ function HomeScreen({ lang = "en" }) {
   }, /*#__PURE__*/React.createElement(Badge, {
     tone: "primary"
   }, isFr ? "À noter à votre agenda" : "Save the Date"), /*#__PURE__*/React.createElement("div", {
+    className: isFr ? "hero-heading hero-heading-fr" : "hero-heading",
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 700,
@@ -2032,7 +2136,9 @@ function HomeScreen({ lang = "en" }) {
   }, /*#__PURE__*/React.createElement("source", {
     src: resolveAsset("video/pinnacle-2027-teaser.mp4"),
     type: "video/mp4"
-  }))), /*#__PURE__*/React.createElement("div", {
+  }))), /*#__PURE__*/React.createElement(ItinerarySection, {
+    isFr: isFr
+  }), /*#__PURE__*/React.createElement("div", {
     style: {
       maxWidth: 640,
       margin: '0 auto',
