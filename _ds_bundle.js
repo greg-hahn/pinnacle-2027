@@ -1919,73 +1919,138 @@ const PRESIDENT_MESSAGE_TYPE = {
 };
 const ITINERARY_DAYS = [{
   iso: '2027-05-06',
-  dateEn: 'Thursday, May 6, 2027',
+  dateEn: 'Thursday May 6, 2027',
   dateFr: 'Jeudi 6 mai 2027',
-  placeEn: 'London, England',
-  placeFr: 'Londres, Angleterre',
-  titleEn: 'The London Experience',
-  titleFr: 'L’expérience londonienne',
-  descEn: 'Arrive in London and settle into the InterContinental London Park Lane before exploring the vibrant city.',
-  descFr: 'Arrivée à Londres et installation à l’InterContinental London Park Lane, avant de partir à la découverte de cette ville vibrante.',
-  src: 'photos/itinerary-london-arrival.webp',
-  altEn: 'The Mall in London lined with Union Jack flags and leading toward Buckingham Palace',
-  altFr: 'The Mall à Londres, bordée de drapeaux britanniques et menant au palais de Buckingham'
+  titleEn: 'London, England – The London Experience',
+  titleFr: 'Londres, Angleterre – L’expérience londonienne',
+  descEn: 'Arrive in London and settle into the InterContinental London Park Lane, before exploring the vibrant city of London.',
+  descFr: 'Arrivez à Londres et installez-vous à l’InterContinental London Park Lane, avant de partir à la découverte de la ville animée de Londres.',
+  images: [{
+    src: 'photos/itinerary-london-arrival.webp',
+    altEn: 'The Mall in London lined with Union Jack flags and leading toward Buckingham Palace',
+    altFr: 'The Mall à Londres, bordée de drapeaux britanniques et menant au palais de Buckingham'
+  }, {
+    src: 'photos/itinerary-london-day1-westminster.webp',
+    altEn: 'The Palace of Westminster and Elizabeth Tower at sunset',
+    altFr: 'Le palais de Westminster et la tour Elizabeth au coucher du soleil'
+  }, {
+    src: 'photos/itinerary-london-day1-tower.webp',
+    altEn: 'The Tower of London illuminated beside the Thames at dusk',
+    altFr: 'La tour de Londres illuminée au bord de la Tamise au crépuscule'
+  }]
 }, {
   iso: '2027-05-07',
-  dateEn: 'Friday, May 7, 2027',
+  dateEn: 'Friday May 7, 2027',
   dateFr: 'Vendredi 7 mai 2027',
-  placeEn: 'London & Embarkation',
-  placeFr: 'Londres et embarquement',
-  titleEn: 'Windstar Star Pride',
-  titleFr: 'Windstar Star Pride',
-  descEn: 'Enjoy the morning in London before boarding at HMS Belfast and sailing along the Thames beneath iconic Tower Bridge.',
-  descFr: 'Profitez de la matinée à Londres avant d’embarquer au HMS Belfast et de naviguer sur la Tamise sous l’emblématique Tower Bridge.',
-  src: 'photos/itinerary-london-embarkation.webp',
-  altEn: 'Tower Bridge illuminated at dusk over the River Thames',
-  altFr: 'Le Tower Bridge illuminé au crépuscule au-dessus de la Tamise'
+  titleEn: 'London & Embarkation: Windstar Star Pride',
+  titleFr: 'Londres et embarquement : Windstar Star Pride',
+  descEn: 'Enjoy the morning in London before boarding the Windstar Star Pride at HMS Belfast. The journey begins in unforgettable fashion, sailing along the Thames and beneath the iconic Tower Bridge.',
+  descFr: 'Profitez de la matinée à Londres avant de monter à bord du Windstar Star Pride au HMS Belfast. Le voyage commence de façon inoubliable, en naviguant sur la Tamise et sous l’emblématique Tower Bridge.',
+  images: [{
+    src: 'photos/itinerary-london-embarkation.webp',
+    altEn: 'Tower Bridge illuminated at dusk over the River Thames',
+    altFr: 'Le Tower Bridge illuminé au crépuscule au-dessus de la Tamise'
+  }, {
+    src: 'photos/star-pride.webp',
+    altEn: 'The Windstar Star Pride luxury yacht at sea',
+    altFr: 'Le yacht de luxe Windstar Star Pride en mer'
+  }, {
+    src: 'photos/itinerary-london-day2-bridge-detail.webp',
+    altEn: 'A close view of a Tower Bridge tower against a blue sky',
+    altFr: 'Une vue rapprochée d’une tour du Tower Bridge sous un ciel bleu'
+  }]
 }, {
   iso: '2027-05-08',
-  dateEn: 'Saturday, May 8, 2027',
+  dateEn: 'Saturday May 8, 2027',
   dateFr: 'Samedi 8 mai 2027',
-  placeEn: 'Antwerp, Belgium',
-  placeFr: 'Anvers, Belgique',
-  titleEn: 'Culture, Style & Celebration',
-  titleFr: 'Culture, style et célébration',
-  descEn: 'Discover Antwerp’s historic centre, Grote Markt and Scheldt riverfront, where architecture, art, fashion and the diamond trade meet.',
-  descFr: 'Découvrez le centre historique d’Anvers, la Grote Markt et les rives de l’Escaut, où se rencontrent architecture, art, mode et tradition diamantaire.',
-  src: 'photos/itinerary-antwerp.webp',
-  altEn: 'Antwerp’s Grote Markt with the Brabo Fountain, guild houses and cathedral tower',
-  altFr: 'La Grote Markt d’Anvers avec la fontaine de Brabo, les maisons des corporations et la tour de la cathédrale'
+  titleEn: 'Antwerp, Belgium: Culture, Style & Celebration',
+  titleFr: 'Anvers, Belgique : culture, style et célébration',
+  descEn: 'Arrive in Antwerp, a stylish Belgian city where historic architecture, art, fashion and the famous diamond trade come together. Its beautiful historic centre, Grote Markt and Scheldt riverfront provide a wonderful backdrop for the day.',
+  descFr: 'Arrivez à Anvers, une ville belge élégante où se côtoient architecture historique, art, mode et célèbre commerce du diamant. Son magnifique centre historique, la Grote Markt et les rives de l’Escaut offrent un cadre merveilleux pour la journée.',
+  images: [{
+    src: 'photos/itinerary-antwerp.webp',
+    altEn: 'Antwerp’s Grote Markt with the Brabo Fountain, guild houses and cathedral tower',
+    altFr: 'La Grote Markt d’Anvers avec la fontaine de Brabo, les maisons des corporations et la tour de la cathédrale'
+  }, {
+    src: 'photos/itinerary-antwerp-cathedral.webp',
+    altEn: 'The Cathedral of Our Lady rising over Antwerp’s historic centre',
+    altFr: 'La cathédrale Notre-Dame dominant le centre historique d’Anvers'
+  }, {
+    src: 'photos/itinerary-antwerp-het-steen.webp',
+    altEn: 'Het Steen medieval fortress in Antwerp',
+    altFr: 'La forteresse médiévale Het Steen à Anvers'
+  }]
 }, {
   iso: '2027-05-09',
-  dateEn: 'Sunday, May 9, 2027',
+  dateEn: 'Sunday May 9, 2027',
   dateFr: 'Dimanche 9 mai 2027',
-  placeEn: 'Bruges, Belgium',
-  placeFr: 'Bruges, Belgique',
-  titleEn: 'Medieval Belgium',
-  titleFr: 'La Belgique médiévale',
-  descEn: 'Explore Bruges’ UNESCO-listed historic centre, with its winding canals, cobblestone streets, Gothic architecture and picturesque squares.',
-  descFr: 'Explorez le centre historique de Bruges, inscrit au patrimoine mondial de l’UNESCO, avec ses canaux, ses rues pavées, son architecture gothique et ses places pittoresques.',
-  src: 'photos/itinerary-bruges.webp',
-  altEn: 'A quiet Bruges canal framed by a sequence of historic brick bridges',
-  altFr: 'Un paisible canal de Bruges encadré par une série de ponts historiques en brique'
+  titleEn: 'Bruges, Belgium: Medieval Belgium',
+  titleFr: 'Bruges, Belgique : la Belgique médiévale',
+  descEn: 'Discover the storybook beauty of Bruges, one of Europe’s best-preserved medieval cities. Its UNESCO-listed historic centre is known for winding canals, cobblestone streets, Gothic architecture and picturesque market squares.',
+  descFr: 'Découvrez la beauté féerique de Bruges, l’une des villes médiévales les mieux préservées d’Europe. Son centre historique, inscrit au patrimoine mondial de l’UNESCO, est connu pour ses canaux sinueux, ses rues pavées, son architecture gothique et ses places de marché pittoresques.',
+  images: [{
+    src: 'photos/itinerary-bruges.webp',
+    altEn: 'A quiet Bruges canal framed by a sequence of historic brick bridges',
+    altFr: 'Un paisible canal de Bruges encadré par une série de ponts historiques en brique'
+  }, {
+    src: 'photos/itinerary-bruges-street.webp',
+    altEn: 'A narrow cobblestone street lined with colourful historic buildings in Bruges',
+    altFr: 'Une ruelle pavée bordée de bâtiments historiques colorés à Bruges'
+  }, {
+    src: 'photos/itinerary-bruges-aerial.webp',
+    altEn: 'An aerial view of Bruges’ canals and red-roofed historic centre',
+    altFr: 'Une vue aérienne des canaux et des toits rouges du centre historique de Bruges'
+  }]
 }, {
   iso: '2027-05-10',
-  dateEn: 'Monday, May 10, 2027',
+  dateEn: 'Monday May 10, 2027',
   dateFr: 'Lundi 10 mai 2027',
-  placeEn: 'London, England',
-  placeFr: 'Londres, Angleterre',
-  titleEn: 'Return Home',
-  titleFr: 'Retour à Londres',
+  titleEn: 'London, England: Return Home',
+  titleFr: 'Londres, Angleterre : retour à la maison',
   descEn: 'Sail back into London for an early morning arrival at HMS Belfast, bringing the Pinnacle journey full circle.',
   descFr: 'Revenez à Londres pour une arrivée tôt le matin au HMS Belfast, bouclant ainsi le voyage Pinnacle.',
-  src: 'photos/itinerary-london-return.webp',
-  altEn: 'The London Eye, Westminster and the River Thames in morning light',
-  altFr: 'Le London Eye, Westminster et la Tamise dans la lumière du matin'
+  images: [{
+    src: 'photos/itinerary-london-return.webp',
+    altEn: 'The London Eye, Westminster and the River Thames in morning light',
+    altFr: 'Le London Eye, Westminster et la Tamise dans la lumière du matin'
+  }, {
+    src: 'photos/itinerary-london-day5-eye.webp',
+    altEn: 'The London Eye above the Thames beneath a clear blue sky',
+    altFr: 'Le London Eye au-dessus de la Tamise sous un ciel bleu'
+  }, {
+    src: 'photos/itinerary-london-day5-lamps.webp',
+    altEn: 'The London Eye and ornate riverside lamps beside the Thames',
+    altFr: 'Le London Eye et des lampadaires ornés au bord de la Tamise'
+  }]
 }];
 function ItinerarySection({
   isFr
 }) {
+  const [activeDay, setActiveDay] = React.useState(0);
+  const activeItinerary = ITINERARY_DAYS[activeDay];
+  const moveToDay = nextDay => {
+    const normalizedDay = (nextDay + ITINERARY_DAYS.length) % ITINERARY_DAYS.length;
+    setActiveDay(normalizedDay);
+    window.requestAnimationFrame(() => {
+      const tab = document.getElementById(`itinerary-tab-${normalizedDay}`);
+      if (tab) tab.focus();
+    });
+  };
+  const handleTabKeyDown = (event, index) => {
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      moveToDay(index + 1);
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      moveToDay(index - 1);
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      moveToDay(0);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      moveToDay(ITINERARY_DAYS.length - 1);
+    }
+  };
   return /*#__PURE__*/React.createElement("section", {
     id: "itinerary",
     className: "itinerary-section",
@@ -1994,31 +2059,49 @@ function ItinerarySection({
     className: "itinerary-wrap"
   }, /*#__PURE__*/React.createElement("div", {
     className: "itinerary-heading"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "itinerary-eyebrow"
-  }, isFr ? "Le voyage Pinnacle" : "The Pinnacle Journey"), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("h2", {
     id: "itinerary-title"
-  }, isFr ? "Cinq jours, trois destinations inoubliables." : "Five days, three unforgettable destinations."), /*#__PURE__*/React.createElement("p", null, isFr ? "Un premier aperçu du voyage qui vous attend à Londres, à Anvers et à Bruges." : "A first look at the experiences waiting in London, Antwerp and Bruges.")), /*#__PURE__*/React.createElement("div", {
-    className: "itinerary-grid"
-  }, ITINERARY_DAYS.map((day, index) => /*#__PURE__*/React.createElement("article", {
-    className: "itinerary-card",
+  }, isFr ? "Le voyage Pinnacle" : "The Pinnacle Journey"), /*#__PURE__*/React.createElement("p", null, isFr ? "Pinnacle 2027 commence au cœur de Londres avant de prendre le large à bord de l’intimiste Windstar Star Pride. D’un départ inoubliable sous le Tower Bridge aux rues historiques d’Anvers et à la beauté féerique de Bruges, chaque journée apporte une nouvelle expérience." : "Pinnacle 2027 begins in the heart of London before setting sail aboard the intimate Windstar Star Pride. From an unforgettable departure beneath Tower Bridge to the historic streets of Antwerp and the storybook beauty of Bruges, each day brings a new experience.")), /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-tabs",
+    role: "tablist",
+    "aria-label": isFr ? "Jours de l’itinéraire" : "Itinerary days"
+  }, ITINERARY_DAYS.map((day, index) => /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    role: "tab",
+    id: `itinerary-tab-${index}`,
+    className: `itinerary-tab${activeDay === index ? ' is-active' : ''}`,
+    "aria-selected": activeDay === index,
+    "aria-controls": `itinerary-panel-${index}`,
+    tabIndex: activeDay === index ? 0 : -1,
+    onClick: () => setActiveDay(index),
+    onKeyDown: event => handleTabKeyDown(event, index),
     key: day.iso
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "itinerary-card-media"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: resolveAsset(day.src),
-    alt: isFr ? day.altFr : day.altEn,
-    loading: "lazy",
-    decoding: "async"
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "itinerary-card-copy"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "itinerary-date"
   }, /*#__PURE__*/React.createElement("span", null, isFr ? `Jour ${index + 1}` : `Day ${index + 1}`), /*#__PURE__*/React.createElement("time", {
     dateTime: day.iso
-  }, isFr ? day.dateFr : day.dateEn)), /*#__PURE__*/React.createElement("div", {
-    className: "itinerary-place"
-  }, isFr ? day.placeFr : day.placeEn), /*#__PURE__*/React.createElement("h3", null, isFr ? day.titleFr : day.titleEn), /*#__PURE__*/React.createElement("p", null, isFr ? day.descFr : day.descEn)))))));
+  }, isFr ? day.dateFr : day.dateEn)))), /*#__PURE__*/React.createElement("article", {
+    className: "itinerary-panel",
+    role: "tabpanel",
+    id: `itinerary-panel-${activeDay}`,
+    "aria-labelledby": `itinerary-tab-${activeDay}`,
+    key: activeItinerary.iso
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-panel-copy"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-day-label"
+  }, isFr ? `Jour ${activeDay + 1}` : `Day ${activeDay + 1}`), /*#__PURE__*/React.createElement("time", {
+    className: "itinerary-panel-date",
+    dateTime: activeItinerary.iso
+  }, isFr ? activeItinerary.dateFr : activeItinerary.dateEn), /*#__PURE__*/React.createElement("h3", null, isFr ? activeItinerary.titleFr : activeItinerary.titleEn), /*#__PURE__*/React.createElement("p", null, isFr ? activeItinerary.descFr : activeItinerary.descEn)), /*#__PURE__*/React.createElement("div", {
+    className: "itinerary-gallery"
+  }, activeItinerary.images.map((photo, index) => /*#__PURE__*/React.createElement("figure", {
+    className: `itinerary-photo itinerary-photo-${index + 1}`,
+    key: photo.src
+  }, /*#__PURE__*/React.createElement("img", {
+    src: resolveAsset(photo.src),
+    alt: isFr ? photo.altFr : photo.altEn,
+    loading: "lazy",
+    decoding: "async"
+  })))))));
 }
 function HomeScreen({ lang = "en" }) {
   const isFr = lang === "fr" || lang === "fr-CA";
