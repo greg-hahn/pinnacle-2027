@@ -1921,7 +1921,7 @@ const ITINERARY_DAYS = [{
   iso: '2027-05-06',
   dateEn: 'Thursday May 6, 2027',
   dateFr: 'Jeudi 6 mai 2027',
-  titleEn: 'London, England – The London Experience',
+  titleEn: 'The London Experience',
   titleFr: 'Londres, Angleterre – L’expérience londonienne',
   descEn: 'Arrive in London and settle into the InterContinental London Park Lane, before exploring the vibrant city of London.',
   descFr: 'Arrivez à Londres et installez-vous à l’InterContinental London Park Lane, avant de partir à la découverte de la ville animée de Londres.',
