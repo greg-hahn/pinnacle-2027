@@ -1922,7 +1922,7 @@ const ITINERARY_DAYS = [{
   dateEn: 'Thursday May 6, 2027',
   dateFr: 'Jeudi 6 mai 2027',
   titleEn: 'The London Experience',
-  titleFr: 'Londres, Angleterre – L’expérience londonienne',
+  titleFr: 'L’expérience londonienne',
   descEn: 'Arrive in London and settle into the InterContinental London Park Lane, before exploring the vibrant city of London.',
   descFr: 'Arrivez à Londres et installez-vous à l’InterContinental London Park Lane, avant de partir à la découverte de la ville animée de Londres.',
   images: [{
@@ -2028,6 +2028,15 @@ function ItinerarySection({
 }) {
   const [activeDay, setActiveDay] = React.useState(0);
   const activeItinerary = ITINERARY_DAYS[activeDay];
+  React.useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById('itinerary')?.scrollIntoView({
+        behavior: 'auto',
+        block: 'start'
+      });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
   const moveToDay = nextDay => {
     const normalizedDay = (nextDay + ITINERARY_DAYS.length) % ITINERARY_DAYS.length;
     setActiveDay(normalizedDay);
