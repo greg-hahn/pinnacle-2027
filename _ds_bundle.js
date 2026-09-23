@@ -1966,7 +1966,7 @@ const ITINERARY_DAYS = [{
   titleEn: 'Antwerp, Belgium: Culture, Style & Celebration',
   titleFr: 'Anvers, Belgique : culture, style et célébration',
   descEn: 'Arrive in Antwerp, a stylish Belgian city where historic architecture, art, fashion and the famous diamond trade come together. Its beautiful historic centre, Grote Markt and Scheldt riverfront provide a wonderful backdrop for the day.',
-  descFr: 'Arrivez à Anvers, une ville belge élégante où se côtoient architecture historique, art, mode et célèbre commerce du diamant. Son magnifique centre historique, la Grote Markt et les rives de l’Escaut offrent un cadre merveilleux pour la journée.',
+  descFr: 'Découvrez Anvers, une élégante ville belge où se mêlent architecture historique, art, mode et savoir-faire joaillier. Son magnifique centre historique, la Grote Markt et les rives de l’Escaut offrent un cadre exceptionnel pour cette journée.',
   images: [{
     src: 'photos/itinerary-antwerp.webp',
     altEn: 'Antwerp’s Grote Markt with the Brabo Fountain, guild houses and cathedral tower',
@@ -2006,7 +2006,7 @@ const ITINERARY_DAYS = [{
   dateEn: 'Monday May 10, 2027',
   dateFr: 'Lundi 10 mai 2027',
   titleEn: 'London, England: Return Home',
-  titleFr: 'Londres, Angleterre : retour à la maison',
+  titleFr: 'Londres, Angleterre : le retour',
   descEn: 'Sail back into London for an early morning arrival at HMS Belfast, bringing the Pinnacle journey full circle.',
   descFr: 'Revenez à Londres pour une arrivée tôt le matin au HMS Belfast, bouclant ainsi le voyage Pinnacle.',
   images: [{
