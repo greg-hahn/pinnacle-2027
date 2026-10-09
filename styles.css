@@ -292,3 +292,240 @@
     transition: none;
   }
 }
+
+/* English Round 3 preview: two experiences, with the days grouped together. */
+.experience-tabs {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 8px;
+  padding: 8px;
+  margin-bottom: 46px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-page);
+}
+
+.experience-tab {
+  min-width: 0;
+  padding: 19px 22px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: clamp(14px, 1.6vw, 17px);
+  font-weight: 600;
+  line-height: 1.5;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.experience-tab:hover {
+  background: var(--surface-sunken);
+  color: var(--text-primary);
+}
+
+.experience-tab.is-active {
+  background: var(--color-navy);
+  color: var(--text-inverse);
+}
+
+.experience-tab:focus-visible,
+.experience-panel:focus-visible,
+.itinerary-panel:focus-visible {
+  outline: 3px solid var(--accent-secondary);
+  outline-offset: 4px;
+}
+
+.experience-panel[hidden],
+.itinerary-panel[hidden] {
+  display: none;
+}
+
+.onboard-heading {
+  max-width: 850px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.onboard-heading h2 {
+  margin: 0 0 20px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(29px, 4.4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.onboard-heading h3 {
+  margin: 0 0 22px;
+  color: var(--accent-secondary);
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.onboard-content p,
+.onboard-feature-list {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.onboard-content p {
+  margin: 0 0 18px;
+}
+
+.onboard-content p:last-child {
+  margin-bottom: 0;
+}
+
+.onboard-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+}
+
+.onboard-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.onboard-opening-photo {
+  margin: 0 auto 48px;
+  max-width: 1000px;
+}
+
+.onboard-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 38px;
+  margin-bottom: 38px;
+  padding: 34px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-page);
+}
+
+.onboard-section:last-child {
+  margin-bottom: 0;
+}
+
+.onboard-section h3 {
+  margin: 0 0 22px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.8vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.onboard-feature-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.onboard-feature-list li {
+  padding-left: 3px;
+  margin-bottom: 10px;
+}
+
+.onboard-feature-list li::marker {
+  color: var(--accent-secondary);
+}
+
+.onboard-inclusions {
+  margin-top: 24px !important;
+  padding: 20px 22px;
+  border-left: 3px solid var(--accent-secondary);
+  background: var(--surface-sunken);
+}
+
+.onboard-life-onboard {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+}
+
+.onboard-life-onboard .onboard-section-photos {
+  position: sticky;
+  top: 24px;
+}
+
+.onboard-dining-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.onboard-dining-gallery .onboard-photo {
+  aspect-ratio: 4 / 3;
+}
+
+.onboard-dining-gallery img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .onboard-section,
+  .onboard-life-onboard {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .onboard-life-onboard .onboard-section-photos {
+    position: static;
+  }
+
+  .onboard-section-photos {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-tabs {
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    gap: 5px;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
+
+  .experience-tab {
+    padding: 13px 9px;
+    font-size: 13px;
+  }
+
+  .onboard-heading {
+    text-align: left;
+    margin-bottom: 26px;
+  }
+
+  .onboard-heading h2 {
+    font-size: 30px;
+  }
+
+  .onboard-opening-photo {
+    margin-bottom: 28px;
+  }
+
+  .onboard-section {
+    padding: 22px 20px;
+    margin-bottom: 24px;
+  }
+
+  .onboard-dining-gallery {
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-tab {
+    transition: none;
+  }
+}

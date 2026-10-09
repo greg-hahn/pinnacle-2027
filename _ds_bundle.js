@@ -2023,11 +2023,11 @@ const ITINERARY_DAYS = [{
     altFr: 'Big Ben, le palais de Westminster et le pont de Westminster au bord de la Tamise'
   }]
 }];
-function ItinerarySection({
-  isFr
+function DailyItinerarySection({
+  isFr,
+  embedded = false
 }) {
   const [activeDay, setActiveDay] = React.useState(0);
-  const activeItinerary = ITINERARY_DAYS[activeDay];
   React.useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       document.getElementById('itinerary')?.scrollIntoView({
@@ -2061,8 +2061,8 @@ function ItinerarySection({
     }
   };
   return /*#__PURE__*/React.createElement("section", {
-    id: "itinerary",
-    className: "itinerary-section",
+    id: embedded ? undefined : "itinerary",
+    className: embedded ? "daily-itinerary" : "itinerary-section",
     "aria-labelledby": "itinerary-title"
   }, /*#__PURE__*/React.createElement("div", {
     className: "itinerary-wrap"
@@ -2087,30 +2087,279 @@ function ItinerarySection({
     key: day.iso
   }, /*#__PURE__*/React.createElement("span", null, isFr ? `Jour ${index + 1}` : `Day ${index + 1}`), /*#__PURE__*/React.createElement("time", {
     dateTime: day.iso
-  }, isFr ? day.dateFr : day.dateEn)))), /*#__PURE__*/React.createElement("article", {
+  }, isFr ? day.dateFr : day.dateEn)))), ITINERARY_DAYS.map((day, dayIndex) => React.createElement("article", {
     className: "itinerary-panel",
     role: "tabpanel",
-    id: `itinerary-panel-${activeDay}`,
-    "aria-labelledby": `itinerary-tab-${activeDay}`,
-    key: activeItinerary.iso
-  }, /*#__PURE__*/React.createElement("div", {
+    id: `itinerary-panel-${dayIndex}`,
+    "aria-labelledby": `itinerary-tab-${dayIndex}`,
+    hidden: activeDay !== dayIndex,
+    tabIndex: 0,
+    key: day.iso
+  }, React.createElement("div", {
     className: "itinerary-panel-copy"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, React.createElement("div", {
     className: "itinerary-day-label"
-  }, isFr ? `Jour ${activeDay + 1}` : `Day ${activeDay + 1}`), /*#__PURE__*/React.createElement("time", {
+  }, isFr ? `Jour ${dayIndex + 1}` : `Day ${dayIndex + 1}`), React.createElement("time", {
     className: "itinerary-panel-date",
-    dateTime: activeItinerary.iso
-  }, isFr ? activeItinerary.dateFr : activeItinerary.dateEn), /*#__PURE__*/React.createElement("h3", null, isFr ? activeItinerary.titleFr : activeItinerary.titleEn), /*#__PURE__*/React.createElement("p", null, isFr ? activeItinerary.descFr : activeItinerary.descEn)), /*#__PURE__*/React.createElement("div", {
+    dateTime: day.iso
+  }, isFr ? day.dateFr : day.dateEn), React.createElement("h3", null, isFr ? day.titleFr : day.titleEn), React.createElement("p", null, isFr ? day.descFr : day.descEn)), React.createElement("div", {
     className: "itinerary-gallery"
-  }, activeItinerary.images.map((photo, index) => /*#__PURE__*/React.createElement("figure", {
+  }, day.images.map((photo, index) => React.createElement("figure", {
     className: `itinerary-photo itinerary-photo-${index + 1}`,
     key: photo.src
-  }, /*#__PURE__*/React.createElement("img", {
+  }, React.createElement("img", {
     src: resolveAsset(photo.src),
     alt: isFr ? photo.altFr : photo.altEn,
     loading: "lazy",
     decoding: "async"
-  })))))));
+  }))))))));
+}
+// Round 3 client copy, with the editorial tab request excluded.
+const ONBOARD_CONTENT = [
+  {
+    "id": "introduction",
+    "heading": "Your Pinnacle 2027 – Traveling in Style on the High Seas",
+    "paragraphs": [
+      "Your Windstar experience starts with a ‘Sail Away’ to remember. You will depart from the heart of London, aboard Star Pride, and pass beneath Tower Bridge as it opens. This is a bucket list experience, you never knew you wanted!",
+      "Windstar brings together the comfort of a luxury cruise and the relaxed atmosphere of a private yacht. Windstar prides itself on an elevated level of service, delicious culinary experiences, and small touches of luxury. It’s an easygoing onboard experience, small enough to lend itself to natural connections with your fellow attendees, and luxurious enough to give you a taste of the fine life that your hard work has earned."
+    ]
+  },
+  {
+    "id": "accommodation",
+    "heading": "Your Accommodation Suite Features",
+    "items": [
+      "Queen-size bed with luxurious linens",
+      "Living room",
+      "Luxurious bath amenities",
+      "In-room premium filtered water",
+      "Walk-in closet",
+      "Mini-bar offering",
+      "Waffle-weave robe and slippers",
+      "24-hour in-room dining (complimentary)"
+    ],
+    "paragraphs": [
+      "As a Pinnacle attendee, you will enjoy unlimited select beer, wine (by the glass), cocktails and spirits, plus Wi-Fi, so you can stay connected if you need to."
+    ]
+  },
+  {
+    "id": "life-onboard",
+    "heading": "Life Onboard the Star Pride:",
+    "paragraphs": [
+      "The Star Pride hosts only 312 guests. A small ship where it’s easy to find your way around and recognise a few familiar faces.",
+      "Every cabin is a suite. Starting at 277 square feet, with a walk-in closet, robes, slippers, and a minibar stocked with complimentary soft drinks.",
+      "In 2021, the Star Pride underwent an enormous overhaul. They cut the ship in half! Engineers ‘stretched’ the Star Pride by inserting a new 84-foot section into the middle of the ship, adding fifty suites and two new restaurants. New engines, redesigned bathrooms and upgraded pool and spa spaces completed the transformation.",
+      "There is more than one flavour onboard.  When you are not dining together with the group in the main dining room - Amphora, you will have the opportunity to try regional specialties at Basil + Bamboo, casual bites at the Star Grill, or steak-and-fish candlelit dinners at Veranda/Candles.",
+      "The Yacht Club Café is a chic lounge and all-day snack bar, the perfect place to relax, features new flooring, and an open layout that embraces the view.",
+      "Breakfast comes with a view. Veranda offers a breakfast and lunch buffet with the option to sit outside (weather depending).",
+      "Room service is available around the clock. During dinner hours, you can even enjoy a coursed meal from Amphora in your suite.",
+      "You can visit the bridge! The open-bridge policy lets you meet the officers and see how they navigate the yacht. (When operations permit)."
+    ]
+  },
+  {
+    "id": "restaurants",
+    "heading": "Restaurants & Cafés",
+    "items": [
+      "Amphora: Main restaurant with open seating.",
+      "Candles: Indoor/outdoor dining, featuring steaks and grilled dishes.",
+      "Basil + Bamboo: Regional-inspired specialty restaurant.",
+      "Star Grill: Casual outdoor barbecue and grilled favourites.",
+      "Veranda: Breakfast and lunch, with indoor and outdoor seating.",
+      "Yacht Club Café: Coffee, light bites, and sea views."
+    ]
+  },
+  {
+    "id": "bars",
+    "heading": "Bars & Lounges",
+    "items": [
+      "Compass Rose: Bar and lounge.",
+      "Star Bar: Outdoor bar.",
+      "Entertainment Lounge: Live entertainment and gatherings."
+    ]
+  },
+  {
+    "id": "public-spaces",
+    "heading": "Other Public Spaces",
+    "items": [
+      "Pool and two whirlpools",
+      "Open decks and lounging areas",
+      "World Spa, salon, and barber shop",
+      "Fitness centre and motion studio",
+      "Screening room",
+      "Star Boutique",
+      "Open bridge when operations permit."
+    ]
+  }
+];
+const ONBOARD_PHOTOS = [
+  {
+    "filename": "Star-Pride-image-trigger.webp",
+    "alt": "Star Pride moored beside a green hillside, viewed across turquoise water.",
+    "section": "introduction",
+    "placement": "Primary introductory ship image",
+    "width": 960,
+    "height": 541
+  },
+  {
+    "filename": "O_BR_Star_Balcony-room.webp",
+    "alt": "Suite with a bed, sofa, armchairs and doors opening onto a balcony.",
+    "section": "accommodation",
+    "placement": "Accompany suite features",
+    "width": 960,
+    "height": 776
+  },
+  {
+    "filename": "Star-Pride-Norwegian-Fjords-Danish-Delights.webp",
+    "alt": "Aerial view of the Star Pride bow and upper decks on deep blue water.",
+    "section": "life-onboard",
+    "placement": "Accompany ship size and transformation paragraphs",
+    "width": 960,
+    "height": 540
+  },
+  {
+    "filename": "O_BR_Amphora.webp",
+    "alt": "Amphora dining room with round tables set for dinner.",
+    "section": "restaurants",
+    "placement": "Main dining room paragraph or restaurant gallery",
+    "width": 960,
+    "height": 640
+  },
+  {
+    "filename": "O_BR_Star_Grill.webp",
+    "alt": "Star Grill tables set for evening dining beside open sea views.",
+    "section": "restaurants",
+    "placement": "Star Grill dining gallery",
+    "width": 960,
+    "height": 824
+  },
+  {
+    "filename": "O_BR_Star_Grill_Tables.webp",
+    "alt": "Covered Star Grill dining terrace with tables alongside the ship railing.",
+    "section": "restaurants",
+    "placement": "Outdoor dining gallery",
+    "width": 960,
+    "height": 640
+  },
+  {
+    "filename": "Star_Grill_Buffet.webp",
+    "alt": "Guests and crew at the Star Grill buffet counter on an open deck.",
+    "section": "restaurants",
+    "placement": "Casual dining gallery",
+    "width": 960,
+    "height": 640
+  },
+  {
+    "filename": "O_SB_Yacht-Club.webp",
+    "alt": "Yacht Club lounge with sofas, armchairs and windows overlooking the water.",
+    "section": "bars",
+    "placement": "Yacht Club paragraph or lounge section",
+    "width": 960,
+    "height": 639
+  },
+  {
+    "filename": "starplus-sunset.webp",
+    "alt": "Star Pride sailing across calm blue water in the evening light.",
+    "section": "public-spaces",
+    "placement": "Closing ship image",
+    "width": 960,
+    "height": 896
+  }
+];
+function OnboardPhoto({ photo, className = "" }) {
+  return React.createElement("figure", { className: `onboard-photo ${className}` },
+    React.createElement("img", {
+      src: resolveAsset(`photos/onboard/${photo.filename}`),
+      alt: photo.alt,
+      width: photo.width,
+      height: photo.height,
+      loading: "lazy",
+      decoding: "async"
+    }));
+}
+function OnboardSection() {
+  const intro = ONBOARD_CONTENT[0];
+  return React.createElement("div", { className: "onboard-content" },
+    React.createElement("header", { className: "onboard-heading" },
+      React.createElement("h2", { id: "onboard-title" }, "Life Onboard the Windstar Star Pride"),
+      React.createElement("h3", null, intro.heading),
+      intro.paragraphs.map((paragraph, index) => React.createElement("p", { key: index }, paragraph))),
+    React.createElement(OnboardPhoto, { photo: ONBOARD_PHOTOS[0], className: "onboard-opening-photo" }),
+    ONBOARD_CONTENT.slice(1).map(section => {
+      const photos = ONBOARD_PHOTOS.filter(photo => photo.section === section.id);
+      return React.createElement("section", {
+        className: `onboard-section onboard-${section.id}`,
+        "aria-labelledby": `onboard-${section.id}-title`,
+        key: section.id
+      }, React.createElement("div", { className: "onboard-section-copy" },
+        React.createElement("h3", { id: `onboard-${section.id}-title` }, section.heading),
+        section.items && React.createElement("ul", { className: "onboard-feature-list" },
+          section.items.map(item => React.createElement("li", { key: item }, item))),
+        section.paragraphs && section.paragraphs.map((paragraph, index) => React.createElement("p", {
+          key: index,
+          className: section.id === "accommodation" ? "onboard-inclusions" : undefined
+        }, paragraph))),
+        React.createElement("div", { className: `onboard-section-photos${photos.length > 1 ? " onboard-dining-gallery" : ""}` },
+          photos.map(photo => React.createElement(OnboardPhoto, { photo, key: photo.filename }))));
+    }));
+}
+function ItinerarySection({ isFr }) {
+  const [activeExperience, setActiveExperience] = React.useState(0);
+  // Keep the approved French itinerary intact until the English layout is approved.
+  if (isFr) return React.createElement(DailyItinerarySection, { isFr });
+  const tabs = ["Life Onboard the Windstar Star Pride", "Daily itinerary"];
+  const moveToExperience = index => {
+    const next = (index + tabs.length) % tabs.length;
+    setActiveExperience(next);
+    window.requestAnimationFrame(() => document.getElementById(`experience-tab-${next}`)?.focus());
+  };
+  const handleExperienceKeyDown = (event, index) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      moveToExperience(index + 1);
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      moveToExperience(index - 1);
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      moveToExperience(0);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      moveToExperience(tabs.length - 1);
+    }
+  };
+  return React.createElement("section", {
+    id: "itinerary",
+    className: "itinerary-section experience-section",
+    "aria-label": "Pinnacle 2027 experiences"
+  }, React.createElement("div", { className: "itinerary-wrap" },
+    React.createElement("div", { className: "experience-tabs", role: "tablist", "aria-label": "Explore Pinnacle 2027" },
+      tabs.map((label, index) => React.createElement("button", {
+        type: "button",
+        role: "tab",
+        id: `experience-tab-${index}`,
+        className: `experience-tab${activeExperience === index ? " is-active" : ""}`,
+        "aria-controls": `experience-panel-${index}`,
+        "aria-selected": activeExperience === index,
+        tabIndex: activeExperience === index ? 0 : -1,
+        onClick: () => setActiveExperience(index),
+        onKeyDown: event => handleExperienceKeyDown(event, index),
+        key: label
+      }, label))),
+    React.createElement("div", {
+      id: "experience-panel-0",
+      className: "experience-panel",
+      role: "tabpanel",
+      "aria-labelledby": "experience-tab-0",
+      hidden: activeExperience !== 0,
+      tabIndex: 0
+    }, React.createElement(OnboardSection)),
+    React.createElement("div", {
+      id: "experience-panel-1",
+      className: "experience-panel",
+      role: "tabpanel",
+      "aria-labelledby": "experience-tab-1",
+      hidden: activeExperience !== 1,
+      tabIndex: 0
+    }, React.createElement(DailyItinerarySection, { isFr: false, embedded: true }))));
 }
 function HomeScreen({ lang = "en" }) {
   const isFr = lang === "fr" || lang === "fr-CA";
