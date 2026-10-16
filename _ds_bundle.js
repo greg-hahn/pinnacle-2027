@@ -2285,20 +2285,22 @@ function OnboardSection() {
     React.createElement(OnboardPhoto, { photo: ONBOARD_PHOTOS[0], className: "onboard-opening-photo" }),
     ONBOARD_CONTENT.slice(1).map(section => {
       const photos = ONBOARD_PHOTOS.filter(photo => photo.section === section.id);
+      const photoGroup = React.createElement("div", { className: `onboard-section-photos${photos.length > 1 ? " onboard-dining-gallery" : ""}` },
+        photos.map(photo => React.createElement(OnboardPhoto, { photo, key: photo.filename })));
       return React.createElement("section", {
         className: `onboard-section onboard-${section.id}`,
         "aria-labelledby": `onboard-${section.id}-title`,
         key: section.id
       }, React.createElement("div", { className: "onboard-section-copy" },
         React.createElement("h3", { id: `onboard-${section.id}-title` }, section.heading),
+        section.id === "life-onboard" && photoGroup,
         section.items && React.createElement("ul", { className: "onboard-feature-list" },
           section.items.map(item => React.createElement("li", { key: item }, item))),
         section.paragraphs && section.paragraphs.map((paragraph, index) => React.createElement("p", {
           key: index,
           className: section.id === "accommodation" ? "onboard-inclusions" : undefined
         }, paragraph))),
-        React.createElement("div", { className: `onboard-section-photos${photos.length > 1 ? " onboard-dining-gallery" : ""}` },
-          photos.map(photo => React.createElement(OnboardPhoto, { photo, key: photo.filename }))));
+        section.id !== "life-onboard" && photoGroup);
     }));
 }
 function ItinerarySection({ isFr }) {
