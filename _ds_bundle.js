@@ -2190,10 +2190,86 @@ const ONBOARD_CONTENT = [
     ]
   }
 ];
+const ONBOARD_CONTENT_FR = [
+  {
+    "id": "introduction",
+    "heading": "Votre Pinnacle 2027 – Voyager avec style en haute mer",
+    "paragraphs": [
+      "Votre expérience Windstar commence par un départ en mer inoubliable. Vous quitterez le cœur de Londres à bord du Star Pride et passerez sous le Tower Bridge au moment où il s’ouvrira. Une expérience à ajouter à votre liste de rêves, même si vous n’y aviez jamais pensé!",
+      "Windstar allie le confort d’une croisière de luxe à l’atmosphère détendue d’un yacht privé. La compagnie est fière de son service haut de gamme, de sa cuisine savoureuse et de ses petites attentions luxueuses. L’ambiance à bord est décontractée, dans un cadre suffisamment intime pour favoriser les échanges naturels avec les autres participants, et suffisamment luxueux pour vous donner un avant-goût de la belle vie que votre travail acharné vous a permis de vous offrir."
+    ]
+  },
+  {
+    "id": "accommodation",
+    "heading": "Caractéristiques de votre suite",
+    "items": [
+      "Grand lit (queen) avec literie de luxe",
+      "Coin salon",
+      "Produits de bain de luxe",
+      "Eau filtrée de qualité supérieure dans votre suite",
+      "Garde-robe de type walk-in",
+      "Minibar",
+      "Peignoir en tissu gaufré et pantoufles",
+      "Service aux chambres gratuit, offert 24 heures sur 24"
+    ],
+    "paragraphs": [
+      "En tant que participant au programme Pinnacle, vous profiterez d’un accès illimité à une sélection de bières, de vins au verre, de cocktails et de spiritueux, ainsi que d’une connexion Wi-Fi pour rester en contact au besoin."
+    ]
+  },
+  {
+    "id": "life-onboard",
+    "heading": "La vie à bord du Star Pride",
+    "paragraphs": [
+      "Le Star Pride accueille seulement 312 passagers. Un petit navire où il est facile de s’orienter et de reconnaître quelques visages familiers.",
+      "Chaque cabine est une suite. D’une superficie minimale de 277 pieds carrés, les suites comprennent un garde-robe de type walk-in, des peignoirs, des pantoufles et un minibar approvisionné en boissons non alcoolisées gratuites.",
+      "En 2021, le Star Pride a fait l’objet d’une rénovation majeure. Le navire a littéralement été coupé en deux! Les ingénieurs l’ont allongé en insérant une nouvelle section de 84 pieds au centre, permettant l’ajout de 50 suites et de deux nouveaux restaurants. De nouveaux moteurs, des salles de bains réaménagées et des espaces piscine et spa modernisés ont complété la transformation.",
+      "Les saveurs sont variées à bord. Lorsque vous ne souperez pas avec le groupe dans la salle à manger principale, l’Amphora, vous pourrez découvrir des spécialités d’inspiration régionale au Basil + Bamboo, savourer des bouchées dans l’ambiance décontractée du Star Grill ou profiter d’un souper aux chandelles mettant à l’honneur les steaks et les poissons au Veranda/Candles.",
+      "Le Yacht Club Café est un élégant salon proposant des collations tout au long de la journée : l’endroit idéal pour se détendre. Son nouveau revêtement de plancher et son aménagement ouvert mettent en valeur la vue.",
+      "Le déjeuner s’accompagne d’une vue imprenable. Le Veranda propose un buffet pour le déjeuner et le dîner, avec la possibilité de s’installer à l’extérieur lorsque le temps le permet.",
+      "Le service aux chambres est offert 24 heures sur 24. À l’heure du souper, vous pouvez même déguster un repas à plusieurs services du menu de l’Amphora dans votre suite.",
+      "Vous pouvez visiter la passerelle! La politique d’accès à la passerelle vous permet de rencontrer les officiers et de découvrir comment ils manœuvrent le yacht, lorsque les opérations le permettent."
+    ]
+  },
+  {
+    "id": "restaurants",
+    "heading": "Restaurants et cafés",
+    "items": [
+      "Amphora : Restaurant principal offrant le libre choix de votre table et de vos compagnons de repas.",
+      "Candles : Salle à manger intérieure et extérieure proposant des steaks et des plats grillés.",
+      "Basil + Bamboo : Restaurant de spécialités d’inspiration régionale.",
+      "Star Grill : Restaurant décontracté en plein air proposant des spécialités de barbecue et des grillades.",
+      "Veranda : Déjeuner et dîner, avec places à l’intérieur et à l’extérieur.",
+      "Yacht Club Café : Café, bouchées légères et vue sur la mer."
+    ]
+  },
+  {
+    "id": "bars",
+    "heading": "Bars et salons",
+    "items": [
+      "Compass Rose : Bar et salon.",
+      "Star Bar : Bar extérieur.",
+      "Salon de spectacles : Spectacles et rassemblements."
+    ]
+  },
+  {
+    "id": "public-spaces",
+    "heading": "Autres espaces publics",
+    "items": [
+      "Piscine et deux bains à remous",
+      "Ponts extérieurs et aires de détente",
+      "World Spa, salon de coiffure et services de barbier",
+      "Centre de conditionnement physique et studio d’exercice",
+      "Salle de projection",
+      "Star Boutique",
+      "Passerelle accessible aux passagers lorsque les opérations le permettent"
+    ]
+  }
+];
 const ONBOARD_PHOTOS = [
   {
     "filename": "Star-Pride-image-trigger.webp",
     "alt": "Star Pride moored beside a green hillside, viewed across turquoise water.",
+    "altFr": "Le Star Pride amarré près d’une colline verdoyante, vu depuis les eaux turquoise.",
     "section": "introduction",
     "placement": "Primary introductory ship image",
     "width": 960,
@@ -2202,6 +2278,7 @@ const ONBOARD_PHOTOS = [
   {
     "filename": "O_BR_Star_Balcony-room.webp",
     "alt": "Suite with a bed, sofa, armchairs and doors opening onto a balcony.",
+    "altFr": "Suite avec lit, canapé, fauteuils et portes donnant sur un balcon.",
     "section": "accommodation",
     "placement": "Accompany suite features",
     "width": 960,
@@ -2210,6 +2287,7 @@ const ONBOARD_PHOTOS = [
   {
     "filename": "Star-Pride-Norwegian-Fjords-Danish-Delights.webp",
     "alt": "Aerial view of the Star Pride bow and upper decks on deep blue water.",
+    "altFr": "Vue aérienne de la proue et des ponts supérieurs du Star Pride sur une mer bleu profond.",
     "section": "life-onboard",
     "placement": "Accompany ship size and transformation paragraphs",
     "width": 960,
@@ -2218,6 +2296,7 @@ const ONBOARD_PHOTOS = [
   {
     "filename": "O_BR_Amphora.webp",
     "alt": "Amphora dining room with round tables set for dinner.",
+    "altFr": "Salle à manger de l’Amphora avec des tables rondes dressées pour le souper.",
     "section": "restaurants",
     "placement": "Main dining room paragraph or restaurant gallery",
     "width": 960,
@@ -2226,6 +2305,7 @@ const ONBOARD_PHOTOS = [
   {
     "filename": "O_BR_Star_Grill.webp",
     "alt": "Star Grill tables set for evening dining beside open sea views.",
+    "altFr": "Tables du Star Grill dressées pour le repas du soir avec vue sur la mer.",
     "section": "restaurants",
     "placement": "Star Grill dining gallery",
     "width": 960,
@@ -2234,6 +2314,7 @@ const ONBOARD_PHOTOS = [
   {
     "filename": "O_BR_Star_Grill_Tables.webp",
     "alt": "Covered Star Grill dining terrace with tables alongside the ship railing.",
+    "altFr": "Terrasse couverte du Star Grill avec des tables le long du bastingage.",
     "section": "restaurants",
     "placement": "Outdoor dining gallery",
     "width": 960,
@@ -2242,6 +2323,7 @@ const ONBOARD_PHOTOS = [
   {
     "filename": "Star_Grill_Buffet.webp",
     "alt": "Guests and crew at the Star Grill buffet counter on an open deck.",
+    "altFr": "Passagers et membres d’équipage au comptoir du buffet du Star Grill sur un pont extérieur.",
     "section": "restaurants",
     "placement": "Casual dining gallery",
     "width": 960,
@@ -2250,6 +2332,7 @@ const ONBOARD_PHOTOS = [
   {
     "filename": "O_SB_Yacht-Club.webp",
     "alt": "Yacht Club lounge with sofas, armchairs and windows overlooking the water.",
+    "altFr": "Salon du Yacht Club avec canapés, fauteuils et fenêtres donnant sur l’eau.",
     "section": "bars",
     "placement": "Yacht Club paragraph or lounge section",
     "width": 960,
@@ -2258,35 +2341,37 @@ const ONBOARD_PHOTOS = [
   {
     "filename": "starplus-sunset.webp",
     "alt": "Star Pride sailing across calm blue water in the evening light.",
+    "altFr": "Le Star Pride naviguant sur une mer bleue et calme dans la lumière du soir.",
     "section": "public-spaces",
     "placement": "Closing ship image",
     "width": 960,
     "height": 896
   }
 ];
-function OnboardPhoto({ photo, className = "" }) {
+function OnboardPhoto({ photo, isFr = false, className = "" }) {
   return React.createElement("figure", { className: `onboard-photo ${className}` },
     React.createElement("img", {
       src: resolveAsset(`photos/onboard/${photo.filename}`),
-      alt: photo.alt,
+      alt: isFr ? photo.altFr : photo.alt,
       width: photo.width,
       height: photo.height,
       loading: "lazy",
       decoding: "async"
     }));
 }
-function OnboardSection() {
-  const intro = ONBOARD_CONTENT[0];
+function OnboardSection({ isFr = false }) {
+  const content = isFr ? ONBOARD_CONTENT_FR : ONBOARD_CONTENT;
+  const intro = content[0];
   return React.createElement("div", { className: "onboard-content" },
     React.createElement("header", { className: "onboard-heading" },
-      React.createElement("h2", { id: "onboard-title" }, "Life Onboard the Windstar Star Pride"),
+      React.createElement("h2", { id: "onboard-title" }, isFr ? "La vie à bord du Windstar Star Pride" : "Life Onboard the Windstar Star Pride"),
       React.createElement("h3", null, intro.heading),
       intro.paragraphs.map((paragraph, index) => React.createElement("p", { key: index }, paragraph))),
-    React.createElement(OnboardPhoto, { photo: ONBOARD_PHOTOS[0], className: "onboard-opening-photo" }),
-    ONBOARD_CONTENT.slice(1).map(section => {
+    React.createElement(OnboardPhoto, { photo: ONBOARD_PHOTOS[0], isFr, className: "onboard-opening-photo" }),
+    content.slice(1).map(section => {
       const photos = ONBOARD_PHOTOS.filter(photo => photo.section === section.id);
       const photoGroup = React.createElement("div", { className: `onboard-section-photos${photos.length > 1 ? " onboard-dining-gallery" : ""}` },
-        photos.map(photo => React.createElement(OnboardPhoto, { photo, key: photo.filename })));
+        photos.map(photo => React.createElement(OnboardPhoto, { photo, isFr, key: photo.filename })));
       return React.createElement("section", {
         className: `onboard-section onboard-${section.id}`,
         "aria-labelledby": `onboard-${section.id}-title`,
@@ -2305,9 +2390,9 @@ function OnboardSection() {
 }
 function ItinerarySection({ isFr }) {
   const [activeExperience, setActiveExperience] = React.useState(0);
-  // Keep the approved French itinerary intact until the English layout is approved.
-  if (isFr) return React.createElement(DailyItinerarySection, { isFr });
-  const tabs = ["Life Onboard the Windstar Star Pride", "Daily itinerary"];
+  const tabs = isFr
+    ? ["La vie à bord du Windstar Star Pride", "Itinéraire quotidien"]
+    : ["Life Onboard the Windstar Star Pride", "Daily itinerary"];
   const moveToExperience = index => {
     const next = (index + tabs.length) % tabs.length;
     setActiveExperience(next);
@@ -2331,9 +2416,9 @@ function ItinerarySection({ isFr }) {
   return React.createElement("section", {
     id: "itinerary",
     className: "itinerary-section experience-section",
-    "aria-label": "Pinnacle 2027 experiences"
+    "aria-label": isFr ? "Expériences Pinnacle 2027" : "Pinnacle 2027 experiences"
   }, React.createElement("div", { className: "itinerary-wrap" },
-    React.createElement("div", { className: "experience-tabs", role: "tablist", "aria-label": "Explore Pinnacle 2027" },
+    React.createElement("div", { className: "experience-tabs", role: "tablist", "aria-label": isFr ? "Découvrez Pinnacle 2027" : "Explore Pinnacle 2027" },
       tabs.map((label, index) => React.createElement("button", {
         type: "button",
         role: "tab",
@@ -2353,7 +2438,7 @@ function ItinerarySection({ isFr }) {
       "aria-labelledby": "experience-tab-0",
       hidden: activeExperience !== 0,
       tabIndex: 0
-    }, React.createElement(OnboardSection)),
+    }, React.createElement(OnboardSection, { isFr })),
     React.createElement("div", {
       id: "experience-panel-1",
       className: "experience-panel",
@@ -2361,7 +2446,7 @@ function ItinerarySection({ isFr }) {
       "aria-labelledby": "experience-tab-1",
       hidden: activeExperience !== 1,
       tabIndex: 0
-    }, React.createElement(DailyItinerarySection, { isFr: false, embedded: true }))));
+    }, React.createElement(DailyItinerarySection, { isFr, embedded: true }))));
 }
 function HomeScreen({ lang = "en" }) {
   const isFr = lang === "fr" || lang === "fr-CA";
