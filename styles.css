@@ -536,3 +536,201 @@
     transition: none;
   }
 }
+
+/* Round 4 English excursion preview. French retains its two-tab layout. */
+.experience-tabs-with-excursions {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr) minmax(0, 1fr);
+}
+
+.excursions-heading,
+.excursions-bruges-heading {
+  max-width: 850px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.excursions-heading h2 {
+  margin: 0 0 18px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.4vw, 44px);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.excursions-heading h3 {
+  margin: 0 0 20px;
+  color: var(--accent-secondary);
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.excursions-heading p,
+.excursions-bruges-heading p,
+.excursion-copy p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
+.excursions-bruges-heading {
+  margin-top: 58px;
+}
+
+.excursions-bruges-heading h3 {
+  margin: 0 0 20px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(27px, 3.4vw, 36px);
+  line-height: 1.2;
+}
+
+.excursion-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: 38px;
+  padding: 34px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-page);
+}
+
+.excursion-card:last-child {
+  margin-bottom: 0;
+}
+
+.excursion-card-antwerp .excursion-copy,
+.excursion-card-canals .excursion-copy,
+.excursion-card-carriage .excursion-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.excursion-card-antwerp .excursion-gallery,
+.excursion-card-canals .excursion-gallery,
+.excursion-card-carriage .excursion-gallery {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.excursion-location {
+  display: block;
+  margin: 0 0 13px;
+  color: var(--accent-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.excursion-copy h3 {
+  margin: 0 0 22px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.8vw, 30px);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.excursion-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.excursion-copy .excursion-note {
+  margin-top: 24px;
+  padding: 14px 18px;
+  border-left: 3px solid var(--accent-secondary);
+  background: var(--surface-sunken);
+  font-size: 14px;
+}
+
+.excursion-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  min-width: 0;
+}
+
+.excursion-photo {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  background: var(--surface-sunken);
+}
+
+.excursion-photo-1 {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+}
+
+.excursion-gallery-5 .excursion-photo {
+  aspect-ratio: 16 / 9;
+}
+
+.excursion-gallery-2 .excursion-photo {
+  grid-column: auto;
+  aspect-ratio: 3 / 4;
+}
+
+.excursion-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .excursion-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+
+  .excursion-card .excursion-copy,
+  .excursion-card .excursion-gallery {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .excursion-gallery {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-tabs-with-excursions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .experience-tabs-with-excursions .experience-tab {
+    min-height: 46px;
+    padding: 12px;
+  }
+
+  .excursions-heading,
+  .excursions-bruges-heading {
+    text-align: left;
+    margin-bottom: 26px;
+  }
+
+  .excursions-bruges-heading {
+    margin-top: 40px;
+  }
+
+  .excursion-card {
+    gap: 22px;
+    padding: 24px 20px;
+    margin-bottom: 24px;
+  }
+
+  .excursion-gallery {
+    gap: 8px;
+  }
+}

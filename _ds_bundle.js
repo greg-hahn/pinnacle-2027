@@ -2388,11 +2388,181 @@ function OnboardSection({ isFr = false }) {
         section.id !== "life-onboard" && photoGroup);
     }));
 }
+// Round 4 English excursion copy and supplied photography.
+const EXCURSIONS = [
+  {
+    "id": "london",
+    "title": "London: The Iconic Sights",
+    "label": "London",
+    "paragraphs": [
+      "On Thursday May 6, your time together in London begins with a guided walking tour of St. James’s and Westminster, discovering royal landmarks, and some of the capital’s most recognizable sights. You will then take to the skies for a private Champagne experience on the London Eye, raising a glass as you enjoy sweeping views over the city. That evening, you’ll gather for a traditional pub night near Covent Garden - a relaxed opportunity to connect over good food and a taste of British fun!",
+      "The following morning, you’ll visit the Tower of London as a group, exploring centuries of royal history. Afterwards, enjoy free time at Borough Market to browse the stalls, and sample local specialties. Finally, you will make your way to your Windstar ship, where your journey continues from the heart of London."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/london-eye-riverside.webp",
+        "alt": "The London Eye beside the River Thames"
+      },
+      {
+        "src": "photos/excursions/tower-white-tower.webp",
+        "alt": "The White Tower within the Tower of London"
+      },
+      {
+        "src": "photos/excursions/london-eye.webp",
+        "alt": "The London Eye rising above the Thames"
+      },
+      {
+        "src": "photos/excursions/tower-london.webp",
+        "alt": "Historic stone walls at the Tower of London"
+      },
+      {
+        "src": "photos/excursions/tower-night.webp",
+        "alt": "The Tower of London illuminated at night"
+      }
+    ]
+  },
+  {
+    "id": "antwerp",
+    "title": "Antwerp at Your Own Pace",
+    "label": "Antwerp",
+    "paragraphs": [
+      "On May 8, enjoy a day at leisure discovering Antwerp’s charming city centre at your own pace. Wander historic streets and picturesque squares, browse local shops, or settle into a café to watch the world go by."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/antwerp-city.webp",
+        "alt": "Historic architecture in Antwerp city centre"
+      },
+      {
+        "src": "photos/excursions/antwerp-riverfront.webp",
+        "alt": "The Loodswezen building on Antwerp’s Scheldt riverfront"
+      }
+    ]
+  },
+  {
+    "id": "chocolate",
+    "title": "Bruges & Belgian Chocolate Experience",
+    "label": "Bruges",
+    "paragraphs": [
+      "Explore Bruges’ cobblestone streets, medieval squares and charming canals on a guided walking tour. Then, enjoy an interactive Belgian chocolate workshop with a praline-making demonstration, tastings and the chance to create your own chocolates to take home."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/chocolate-workshop.webp",
+        "alt": "A chocolatier at work in an artisanal chocolate kitchen"
+      },
+      {
+        "src": "photos/excursions/chocolate-display.webp",
+        "alt": "An assortment of chocolates in a display case"
+      },
+      {
+        "src": "photos/excursions/chocolate-making.webp",
+        "alt": "Melted chocolate being stirred in a kitchen"
+      },
+      {
+        "src": "photos/excursions/handmade-chocolates.webp",
+        "alt": "A chocolatier behind rows of handmade chocolates"
+      },
+      {
+        "src": "photos/excursions/chocolate-truffles.webp",
+        "alt": "Chocolatiers preparing chocolate truffles"
+      }
+    ]
+  },
+  {
+    "id": "canals",
+    "title": "A Taste of Bruges: Local Flavours & Scenic Canals",
+    "label": "Bruges",
+    "paragraphs": [
+      "Taste your way through the medieval city of Bruges! Enjoy the charm and picturesque canals on a guided walking tour, with tastings of Belgian frites, waffles and local beer. Finish with a relaxing canal boat tour for a different perspective of this charming city."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/bruges-canal.webp",
+        "alt": "A bridge and historic buildings along a Bruges canal"
+      },
+      {
+        "src": "photos/excursions/bruges-buildings.webp",
+        "alt": "Traditional brick buildings beside a canal in Bruges"
+      },
+      {
+        "src": "photos/excursions/bruges-architecture.webp",
+        "alt": "Historic Belgian architecture in Bruges"
+      }
+    ]
+  },
+  {
+    "id": "brews",
+    "title": "Bruges & Brews: A Taste of Belgian Tradition",
+    "label": "Bruges",
+    "paragraphs": [
+      "Start your day with a guided walking tour of the beautiful city of Bruges before going behind the scenes at De Halve Maan Brewery. Enjoy a tasting of four Belgian beers paired with tapas led by an expert beer sommelier."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/belgian-beer.webp",
+        "alt": "A glass of beer resting on a wooden barrel"
+      },
+      {
+        "src": "photos/excursions/belgian-stout.webp",
+        "alt": "A tasting flight of Belgian beers paired with tapas"
+      },
+      {
+        "src": "photos/excursions/beer-pouring.webp",
+        "alt": "A glass of light beer being served"
+      }
+    ]
+  },
+  {
+    "id": "carriage",
+    "title": "Bruges Through Time: Carriage Ride & Medieval Stories",
+    "label": "Bruges",
+    "paragraphs": [
+      "Begin with a private horse-drawn carriage ride through Bruges’ cobblestone streets, picturesque canals and historic squares. Enjoy a relaxed and intimate introduction to this enchanting city.",
+      "Then, step into medieval Bruges at the Historium, where seven themed rooms bring a love-story to life through film, music and special effects. A 10-minute virtual reality flight reveals the city’s Golden Age and its long-lost landmarks."
+    ],
+    "note": "(minimum of 5 participants required)",
+    "photos": [
+      {
+        "src": "photos/excursions/bruges-carriage-square.webp",
+        "alt": "A horse-drawn carriage on Bruges’ cobblestone Burg Square"
+      },
+      {
+        "src": "photos/excursions/bruges-carriage.webp",
+        "alt": "A horse-drawn carriage touring Bruges"
+      },
+      {
+        "src": "photos/excursions/bruges-historic-city.webp",
+        "alt": "A view of the historic city of Bruges"
+      }
+    ]
+  }
+];
+function ExcursionsSection() {
+  return React.createElement("div", { className: "excursions-content" },
+    React.createElement("header", { className: "excursions-heading" },
+      React.createElement("h2", null, "Experience the Pinnacle!"),
+      React.createElement("h3", null, "Creating Lasting Memories"),
+      React.createElement("p", null, "From iconic sights and local flavours to special celebrations, these experiences will bring you together throughout the program: creating opportunities to explore, connect and celebrate along the way.")),
+    EXCURSIONS.map((excursion, index) => React.createElement(React.Fragment, { key: excursion.id },
+      index === 2 && React.createElement("header", { className: "excursions-bruges-heading" },
+        React.createElement("h3", null, "Experiences in Bruges"),
+        React.createElement("p", null, "On Sunday May 9, you will have the opportunity to select a true Belgium experience for your day in one of the most beautiful medieval towns in the world – Bruges! The options include the following:")),
+      React.createElement("article", { className: `excursion-card excursion-card-${excursion.id}`, "aria-labelledby": `excursion-${excursion.id}-heading` },
+        React.createElement("div", { className: "excursion-copy" },
+          React.createElement("span", { className: "excursion-location" }, excursion.label),
+          React.createElement("h3", { id: `excursion-${excursion.id}-heading` }, excursion.title),
+          excursion.paragraphs.map((paragraph, paragraphIndex) => React.createElement("p", { key: paragraphIndex }, paragraph)),
+          excursion.note && React.createElement("p", { className: "excursion-note" }, excursion.note)),
+        React.createElement("div", { className: `excursion-gallery excursion-gallery-${excursion.photos.length}` },
+          excursion.photos.map((photo, photoIndex) => React.createElement("figure", { className: `excursion-photo excursion-photo-${photoIndex + 1}`, key: photo.src },
+            React.createElement("img", { src: resolveAsset(photo.src), alt: photo.alt, loading: "lazy", decoding: "async" }))))))));
+}
 function ItinerarySection({ isFr }) {
   const [activeExperience, setActiveExperience] = React.useState(0);
   const tabs = isFr
     ? ["La vie à bord du Windstar Star Pride", "Itinéraire quotidien"]
-    : ["Life Onboard the Windstar Star Pride", "Daily itinerary"];
+    : ["Excursions", "Life Onboard the Windstar Star Pride", "Daily itinerary"];
   const moveToExperience = index => {
     const next = (index + tabs.length) % tabs.length;
     setActiveExperience(next);
@@ -2418,7 +2588,7 @@ function ItinerarySection({ isFr }) {
     className: "itinerary-section experience-section",
     "aria-label": isFr ? "Expériences Pinnacle 2027" : "Pinnacle 2027 experiences"
   }, React.createElement("div", { className: "itinerary-wrap" },
-    React.createElement("div", { className: "experience-tabs", role: "tablist", "aria-label": isFr ? "Découvrez Pinnacle 2027" : "Explore Pinnacle 2027" },
+    React.createElement("div", { className: `experience-tabs${isFr ? "" : " experience-tabs-with-excursions"}`, role: "tablist", "aria-label": isFr ? "Découvrez Pinnacle 2027" : "Explore Pinnacle 2027" },
       tabs.map((label, index) => React.createElement("button", {
         type: "button",
         role: "tab",
@@ -2431,22 +2601,19 @@ function ItinerarySection({ isFr }) {
         onKeyDown: event => handleExperienceKeyDown(event, index),
         key: label
       }, label))),
-    React.createElement("div", {
-      id: "experience-panel-0",
+    tabs.map((label, index) => React.createElement("div", {
+      id: `experience-panel-${index}`,
       className: "experience-panel",
       role: "tabpanel",
-      "aria-labelledby": "experience-tab-0",
-      hidden: activeExperience !== 0,
-      tabIndex: 0
-    }, React.createElement(OnboardSection, { isFr })),
-    React.createElement("div", {
-      id: "experience-panel-1",
-      className: "experience-panel",
-      role: "tabpanel",
-      "aria-labelledby": "experience-tab-1",
-      hidden: activeExperience !== 1,
-      tabIndex: 0
-    }, React.createElement(DailyItinerarySection, { isFr, embedded: true }))));
+      "aria-labelledby": `experience-tab-${index}`,
+      hidden: activeExperience !== index,
+      tabIndex: 0,
+      key: label
+    }, !isFr && index === 0
+      ? React.createElement(ExcursionsSection)
+      : index === (isFr ? 0 : 1)
+        ? React.createElement(OnboardSection, { isFr })
+        : React.createElement(DailyItinerarySection, { isFr, embedded: true })))));
 }
 function HomeScreen({ lang = "en" }) {
   const isFr = lang === "fr" || lang === "fr-CA";
