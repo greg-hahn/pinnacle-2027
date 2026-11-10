@@ -2538,16 +2538,170 @@ const EXCURSIONS = [
     ]
   }
 ];
-function ExcursionsSection() {
+const EXCURSIONS_FR = [
+  {
+    "id": "london",
+    "title": "Londres et ses incontournables",
+    "label": "Londres",
+    "paragraphs": [
+      "Le jeudi 6 mai, votre séjour à Londres débutera par une visite guidée à pied de St. James’s et de Westminster. Vous découvrirez des lieux marquants de l’histoire royale et quelques-uns des sites les plus connus de la capitale. Vous prendrez ensuite de la hauteur à bord d’une capsule privée du London Eye, où vous pourrez lever votre coupe de champagne en admirant la vue panoramique sur la ville. En soirée, retrouvez-vous dans un pub traditionnel près de Covent Garden pour partager un bon repas dans une ambiance typiquement britannique.",
+      "Le lendemain matin, vous visiterez la tour de Londres en groupe et plongerez dans plusieurs siècles d’histoire royale. Vous aurez ensuite du temps libre au Borough Market pour parcourir les étals et goûter aux spécialités locales. Vous rejoindrez enfin votre navire Windstar pour poursuivre votre voyage au départ du cœur de Londres."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/london-eye-riverside.webp",
+        "alt": "Le London Eye au bord de la Tamise"
+      },
+      {
+        "src": "photos/excursions/tower-white-tower.webp",
+        "alt": "La tour Blanche dans l’enceinte de la tour de Londres"
+      },
+      {
+        "src": "photos/excursions/london-eye.webp",
+        "alt": "Le London Eye dominant la Tamise"
+      },
+      {
+        "src": "photos/excursions/tower-london.webp",
+        "alt": "Les remparts historiques de la tour de Londres"
+      },
+      {
+        "src": "photos/excursions/tower-night.webp",
+        "alt": "La tour de Londres illuminée la nuit"
+      }
+    ]
+  },
+  {
+    "id": "antwerp",
+    "title": "Anvers à votre rythme",
+    "label": "Anvers",
+    "paragraphs": [
+      "Le samedi 8 mai, profitez d’une journée libre pour découvrir le centre historique d’Anvers à votre rythme. Flânez dans les rues et les places pittoresques, faites un tour dans les boutiques locales ou installez-vous à la terrasse d’un café pour regarder la ville s’animer."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/antwerp-city.webp",
+        "alt": "L’architecture historique du centre-ville d’Anvers"
+      },
+      {
+        "src": "photos/excursions/antwerp-riverfront.webp",
+        "alt": "Le bâtiment Loodswezen sur les quais de l’Escaut à Anvers"
+      }
+    ]
+  },
+  {
+    "id": "chocolate",
+    "title": "Bruges et le chocolat belge",
+    "label": "Bruges",
+    "paragraphs": [
+      "Parcourez les ruelles pavées, les places médiévales et les canaux de Bruges lors d’une visite guidée à pied. Place ensuite à un atelier de chocolat belge, où vous assisterez à une démonstration de fabrication de pralines, dégusterez quelques chocolats et confectionnerez vos propres créations à rapporter à la maison."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/chocolate-workshop.webp",
+        "alt": "Un chocolatier au travail dans un atelier artisanal"
+      },
+      {
+        "src": "photos/excursions/chocolate-display.webp",
+        "alt": "Un assortiment de chocolats en vitrine"
+      },
+      {
+        "src": "photos/excursions/chocolate-making.webp",
+        "alt": "Du chocolat fondu mélangé dans un atelier"
+      },
+      {
+        "src": "photos/excursions/handmade-chocolates.webp",
+        "alt": "Un chocolatier derrière des rangées de chocolats faits à la main"
+      },
+      {
+        "src": "photos/excursions/chocolate-truffles.webp",
+        "alt": "Des chocolatiers préparant des truffes au chocolat"
+      }
+    ]
+  },
+  {
+    "id": "canals",
+    "title": "Bruges gourmande, entre saveurs et canaux",
+    "label": "Bruges",
+    "paragraphs": [
+      "Découvrez Bruges au fil d’une visite guidée à pied ponctuée de dégustations de frites belges, de gaufres et de bière locale. Terminez par une paisible promenade en bateau sur les canaux pour admirer la ville depuis l’eau."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/bruges-canal.webp",
+        "alt": "Un pont et des bâtiments historiques au bord d’un canal de Bruges"
+      },
+      {
+        "src": "photos/excursions/bruges-buildings.webp",
+        "alt": "Des bâtiments traditionnels en briques au bord d’un canal de Bruges"
+      },
+      {
+        "src": "photos/excursions/bruges-architecture.webp",
+        "alt": "L’architecture historique de Bruges"
+      }
+    ]
+  },
+  {
+    "id": "brews",
+    "title": "Bruges et ses traditions brassicoles",
+    "label": "Bruges",
+    "paragraphs": [
+      "Commencez la journée par une visite guidée à pied de Bruges, puis découvrez les coulisses de la brasserie De Halve Maan. Un sommelier spécialisé en bières vous guidera dans la dégustation de quatre bières belges accompagnées de tapas."
+    ],
+    "photos": [
+      {
+        "src": "photos/excursions/belgian-beer.webp",
+        "alt": "Un verre de bière posé sur un tonneau en bois"
+      },
+      {
+        "src": "photos/excursions/belgian-stout.webp",
+        "alt": "Une dégustation de bières belges accompagnées de tapas"
+      },
+      {
+        "src": "photos/excursions/beer-pouring.webp",
+        "alt": "Un verre de bière blonde en cours de service"
+      }
+    ]
+  },
+  {
+    "id": "carriage",
+    "title": "Bruges au fil du temps, de la calèche aux récits médiévaux",
+    "label": "Bruges",
+    "paragraphs": [
+      "Installez-vous à bord d’une calèche privée et laissez-vous porter au rythme des chevaux, le long des canaux et des façades anciennes. C’est une façon paisible de faire connaissance avec la ville en petit groupe.",
+      "Poursuivez votre voyage dans le temps à l’Historium, où sept salles thématiques donnent vie à une histoire d’amour médiévale grâce au cinéma, à la musique et aux effets spéciaux. Un survol de dix minutes en réalité virtuelle vous fera découvrir Bruges à son âge d’or et vous permettra d’admirer des monuments aujourd’hui disparus."
+    ],
+    "note": "Cette activité est offerte sous réserve d’un minimum de cinq participants.",
+    "photos": [
+      {
+        "src": "photos/excursions/bruges-carriage-square.webp",
+        "alt": "Une calèche sur les pavés de la place du Bourg à Bruges"
+      },
+      {
+        "src": "photos/excursions/bruges-carriage.webp",
+        "alt": "Une calèche parcourant Bruges"
+      },
+      {
+        "src": "photos/excursions/bruges-historic-city.webp",
+        "alt": "Une vue du centre historique de Bruges"
+      }
+    ]
+  }
+];
+const EXCURSIONS_INTRO_FR = ["Vivez l’expérience Pinnacle!","Des souvenirs à partager","Des sites emblématiques aux saveurs locales, en passant par les moments de célébration, chaque étape du programme vous donnera l’occasion de faire des découvertes, de tisser des liens et de profiter du voyage ensemble."];
+const EXCURSIONS_BRUGES_FR = ["Vos expériences à Bruges","Le dimanche 9 mai, choisissez l’expérience qui vous plaît le plus pour découvrir Bruges, l’une des plus belles villes médiévales d’Europe."];
+
+function ExcursionsSection({ isFr }) {
+  const intro = isFr ? EXCURSIONS_INTRO_FR : ["Experience the Pinnacle!", "Creating Lasting Memories", "From iconic sights and local flavours to special celebrations, these experiences will bring you together throughout the program: creating opportunities to explore, connect and celebrate along the way."];
+  const bruges = isFr ? EXCURSIONS_BRUGES_FR : ["Experiences in Bruges", "On Sunday May 9, you will have the opportunity to select a true Belgium experience for your day in one of the most beautiful medieval towns in the world – Bruges! The options include the following:"];
   return React.createElement("div", { className: "excursions-content" },
     React.createElement("header", { className: "excursions-heading" },
-      React.createElement("h2", null, "Experience the Pinnacle!"),
-      React.createElement("h3", null, "Creating Lasting Memories"),
-      React.createElement("p", null, "From iconic sights and local flavours to special celebrations, these experiences will bring you together throughout the program: creating opportunities to explore, connect and celebrate along the way.")),
-    EXCURSIONS.map((excursion, index) => React.createElement(React.Fragment, { key: excursion.id },
+      React.createElement("h2", null, intro[0]),
+      React.createElement("h3", null, intro[1]),
+      React.createElement("p", null, intro[2])),
+    (isFr ? EXCURSIONS_FR : EXCURSIONS).map((excursion, index) => React.createElement(React.Fragment, { key: excursion.id },
       index === 2 && React.createElement("header", { className: "excursions-bruges-heading" },
-        React.createElement("h3", null, "Experiences in Bruges"),
-        React.createElement("p", null, "On Sunday May 9, you will have the opportunity to select a true Belgium experience for your day in one of the most beautiful medieval towns in the world – Bruges! The options include the following:")),
+        React.createElement("h3", null, bruges[0]),
+        React.createElement("p", null, bruges[1])),
       React.createElement("article", { className: `excursion-card excursion-card-${excursion.id}`, "aria-labelledby": `excursion-${excursion.id}-heading` },
         React.createElement("div", { className: "excursion-copy" },
           React.createElement("span", { className: "excursion-location" }, excursion.label),
@@ -2561,7 +2715,7 @@ function ExcursionsSection() {
 function ItinerarySection({ isFr }) {
   const [activeExperience, setActiveExperience] = React.useState(0);
   const tabs = isFr
-    ? ["La vie à bord du Windstar Star Pride", "Itinéraire quotidien"]
+    ? ["Excursions", "La vie à bord du Windstar Star Pride", "Itinéraire quotidien"]
     : ["Excursions", "Life Onboard the Windstar Star Pride", "Daily itinerary"];
   const moveToExperience = index => {
     const next = (index + tabs.length) % tabs.length;
@@ -2588,7 +2742,7 @@ function ItinerarySection({ isFr }) {
     className: "itinerary-section experience-section",
     "aria-label": isFr ? "Expériences Pinnacle 2027" : "Pinnacle 2027 experiences"
   }, React.createElement("div", { className: "itinerary-wrap" },
-    React.createElement("div", { className: `experience-tabs${isFr ? "" : " experience-tabs-with-excursions"}`, role: "tablist", "aria-label": isFr ? "Découvrez Pinnacle 2027" : "Explore Pinnacle 2027" },
+    React.createElement("div", { className: "experience-tabs experience-tabs-with-excursions", role: "tablist", "aria-label": isFr ? "Découvrez Pinnacle 2027" : "Explore Pinnacle 2027" },
       tabs.map((label, index) => React.createElement("button", {
         type: "button",
         role: "tab",
@@ -2609,9 +2763,9 @@ function ItinerarySection({ isFr }) {
       hidden: activeExperience !== index,
       tabIndex: 0,
       key: label
-    }, !isFr && index === 0
-      ? React.createElement(ExcursionsSection)
-      : index === (isFr ? 0 : 1)
+    }, index === 0
+      ? React.createElement(ExcursionsSection, { isFr })
+      : index === 1
         ? React.createElement(OnboardSection, { isFr })
         : React.createElement(DailyItinerarySection, { isFr, embedded: true })))));
 }

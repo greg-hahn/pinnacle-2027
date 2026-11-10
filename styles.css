@@ -537,7 +537,7 @@
   }
 }
 
-/* Round 4 English excursion preview. French retains its two-tab layout. */
+/* Round 4 bilingual excursions preview. */
 .experience-tabs-with-excursions {
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr) minmax(0, 1fr);
 }
@@ -732,5 +732,17 @@
 
   .excursion-gallery {
     gap: 8px;
+  }
+}
+
+/* Allow long French headings to fit the shared excursion cards. */
+html[lang^="fr"] .excursion-copy h3 {
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  html[lang^="fr"] .excursion-copy h3 {
+    font-size: clamp(18px, 5vw, 24px);
   }
 }
